@@ -17,7 +17,7 @@ function Header() {
                 <div className="flex items-center gap-8">
                     <div className="flex items-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <g clip-path="url(#clip0_16_84)">
+                            <g clipPath="url(#clip0_16_84)">
                                 <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#F0F0F0"/>
                                 <path d="M3.30752 6.25891C2.05071 7.8941 1.10302 9.77879 0.551208 11.8262H8.87483L3.30752 6.25891Z" fill="#0052B4"/>
                                 <path d="M31.4488 11.8262C30.897 9.77885 29.9492 7.89416 28.6925 6.25897L23.1253 11.8262H31.4488Z" fill="#0052B4"/>
@@ -40,9 +40,9 @@ function Header() {
                             </defs>
                         </svg>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <g clip-path="url(#clip0_16_101)">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C24.8356 0 32 7.16444 32 16C32 24.8356 24.8356 32 16 32C7.16444 32 0 24.8356 0 16C0 7.16444 7.16444 0 16 0Z" fill="#DA251D"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.88892 14L13.2836 17.1929L11.6054 22.3591L16 19.1671L20.3947 22.36L18.7147 17.1938L23.1111 14H17.6605L16 8.88892L14.3396 14H8.88892Z" fill="#FFFF00"/>
+                            <g clipPath="url(#clip0_16_101)">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M16 0C24.8356 0 32 7.16444 32 16C32 24.8356 24.8356 32 16 32C7.16444 32 0 24.8356 0 16C0 7.16444 7.16444 0 16 0Z" fill="#DA251D"/>
+                                <path fillRule="evenodd" clipRule="evenodd" d="M8.88892 14L13.2836 17.1929L11.6054 22.3591L16 19.1671L20.3947 22.36L18.7147 17.1938L23.1111 14H17.6605L16 8.88892L14.3396 14H8.88892Z" fill="#FFFF00"/>
                             </g>
                             <defs>
                                 <clipPath id="clip0_16_101">
@@ -56,17 +56,17 @@ function Header() {
                         (
                             <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g>
-                                    <line y1="-2" x2="34.4031" y2="-2" transform="matrix(0.70501 0.709197 -0.70501 0.709197 5 3.60139)" stroke="white" stroke-width="4"/>
-                                    <path d="M6.74536 26.3986L30.9999 2" stroke="white" stroke-width="4"/>
+                                    <line y1="-2" x2="34.4031" y2="-2" transform="matrix(0.70501 0.709197 -0.70501 0.709197 5 3.60139)" stroke="white" strokeWidth="4"/>
+                                    <path d="M6.74536 26.3986L30.9999 2" stroke="white" strokeWidth="4"/>
                                 </g>
                             </svg>
 
                         ) : (
                             <svg width="36" height="27" viewBox="0 0 36 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g>
-                                    <line y1="2" x2="36" y2="2" stroke="white" stroke-width="4"/>
-                                    <line y1="13.55" x2="36" y2="13.55" stroke="white" stroke-width="4"/>
-                                    <path d="M0 25H36" stroke="white" stroke-width="4"/>
+                                    <line y1="2" x2="36" y2="2" stroke="white" strokeWidth="4"/>
+                                    <line y1="13.55" x2="36" y2="13.55" stroke="white" strokeWidth="4"/>
+                                    <path d="M0 25H36" stroke="white" strokeWidth="4"/>
                                 </g>
                             </svg>
 
