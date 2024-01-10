@@ -20,7 +20,28 @@ function Body() {
                     </svg>
                 </div>
                 <img className='h-full absolute bottom-0' src={Becky} alt='Becky'/>
+                <div className='absolute w-full px-24 py-12 bottom-0 flex justify-between items-end text-white'>
+                    <div className='w-[600px] flex flex-col gap-8'>
+                        <p className='text-8xl font-semibold'>Xin chào, mình là Becky</p>
+                        <div className='flex flex-wrap gap-5'>
+                            <Title props={["UI/UX", "Social post", "Visual design", "branding identity", "product photography"]} />
+                        </div>
+                    </div>
+                    <div className='w-[500px] flex flex-col items-end gap-12 text-lg font-semibold'>
+                        <p>Là một người sáng tạo đa nhiệm, trên con đường trở thành UI/UX Designer và 2D Graphics Designer thực thụ, đem đến cho dự án của mình sự độc đáo và chất lượng. Mình không chỉ đơn thuần là người thiết kế, mà còn là người nhiệt huyết, luôn tìm kiếm cơ hội để làm mới bản thân trong ngành.</p>
+                        <a className='cursor-pointer uppercase py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723]
+                            hover:to-[#F6AA50] hover:shadow-[#F6AA50]'>Các dự án của mình ở đây!</a>
+                    </div>
+                </div>
             </div>
+        </>
+    )
+}
+
+function Title({props}) {
+    return(
+        <>
+            {props.map(x => ( <a className='bg-[#F6AA50] rounded-[50px] text-lg font-semibold uppercase px-10 py-3.5'>{x}</a> ))}
         </>
     )
 }
