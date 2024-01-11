@@ -1,7 +1,15 @@
 import Becky from './assets/becky.png';
-import UiUx from './assets/uiux-bg.jpg';
+import UiUx from "./assets/bg-uiux.png";
+import Branding from "./assets/bg-branding.png";
+import Socialpost from "./assets/bg-socialpost.png";
+import Photography from "./assets/bg-photography.png";
+import Film from "./assets/bg-film.png";
+import { useState } from 'react';
 
 function Body() {
+
+    const [backgroundImage, setBackGroundImage] = useState(UiUx);
+    const titles = ["UI/UX", "Branding", "Social post", "Photography", "Film/Video"];
 
     const scrollRight = () => {
         const scroll = document.querySelector('#main');
@@ -10,6 +18,17 @@ function Body() {
             behavior: "smooth"
         });
     };
+
+    const titleHover = (e) => {
+        const listTitle = {
+            0: UiUx,
+            1: Branding,
+            2: Socialpost,
+            3: Photography,
+            4: Film
+        };
+        setBackGroundImage(listTitle[e.target.getAttribute("data-id")]);
+    }
 
     return(
         <>
@@ -31,7 +50,7 @@ function Body() {
                         <path d="M96.5998 17.0335L72.6114 31.4265L73.044 5.04098L73.0856 2.5H70.5443H46.7468H44.2263L44.2469 5.02049L44.4635 31.4487L20.4381 17.0335L18.2711 15.7332L16.9944 17.9143L4.84246 38.6738L3.54573 40.889L5.79443 42.1268L29.3772 55.1081L5.80994 67.8647L3.53653 69.0953L4.84246 71.3262L16.9944 92.0857L18.2711 94.2668L20.4381 92.9665L44.4635 78.5513L44.2469 104.98L44.2263 107.5H46.7468H70.5443H73.086L73.044 104.959L72.6114 78.7916L96.6142 92.9751L98.756 94.2407L100.032 92.1052L112.437 71.3457L113.775 69.1065L111.481 67.8647L87.914 55.1081L111.497 42.1268L113.766 40.8778L112.437 38.6543L100.032 17.8948L98.7474 15.7449L96.5998 17.0335Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                     </svg>
                 </div>
-                {/* <img className='h-full absolute bottom-0' src={Becky} alt='Becky'/> */}
+                <img className='h-full absolute bottom-0' src={Becky} alt='Becky'/>
                 <div className='absolute w-full px-24 py-12 bottom-0 flex justify-between items-end text-white'>
                     <div className='w-[630px] flex flex-col gap-8'>
                         <p className='text-8xl font-semibold'>Xin chào, mình là Trường</p>
@@ -53,9 +72,14 @@ function Body() {
                 </div>
             </div>
             {/* Section 2 */}
-            <div className='flex flex-[0_0_100vw] items-center px-24 pt-32 pb-16 text-white' style={{ backgroundImage: `url(${UiUx})` }}>
-                <div className='flex flex-col gap-28 h-full overflow-x-auto'>
-                    <TitleSection2 props={["UI/UX", "Branding", "Social post", "Photography", "Video", "Film/Video"]} />
+            <div className='flex flex-[0_0_100vw] items-center px-24 py-36 text-white bg-cover transition-all duration-500' style={{backgroundImage: `url(${backgroundImage})`}}>
+                <div className='w-full flex flex-col gap-32 h-full overflow-x-auto'>
+                    {titles.map((x, index) => ( 
+                        <div key={index} data-id={index} className='flex items-baseline gap-20' onMouseEnter={titleHover}>
+                            <span data-id={index} className='text-3xl font-normal'>{index + 1}.</span>
+                            <div data-id={index} className='capitalize text-7xl font-medium'>{x}</div>
+                        </div> 
+                    ))}
                 </div>
             </div>
         </div>
@@ -68,19 +92,6 @@ function Title({props}) {
     return(
         <>
             {props.map((x, index) => ( <a key={index} className='bg-[#F6AA50] rounded-[50px] text-lg font-semibold uppercase px-10 py-3.5'>{x}</a> ))}
-        </>
-    )
-}
-
-function TitleSection2({props}) {
-    return(
-        <>
-            {props.map((x, index) => ( 
-                <div key={index} className='flex items-baseline gap-20'>
-                    <span className='text-3xl font-normal'>{index + 1}.</span>
-                    <div className='capitalize text-7xl font-medium'>{x}</div>
-                </div> 
-            ))}
         </>
     )
 }
