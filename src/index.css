@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
     body {
         background-color: #082723;
         font-family: "Roboto";

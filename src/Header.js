@@ -8,9 +8,17 @@ function Header() {
         setMenu(!menu);
     }
 
+    const home = () => {
+        const scroll = document.querySelector('#main');
+        scroll.scrollBy({
+            left: -window.innerWidth,
+            behavior: "smooth"
+        });
+    }
+
     return (
-        <>  <div className="fixed flex justify-between items-center w-full px-24 py-8">
-                <div className="font-['Poppins'] font-bold text-3xl text-white">
+        <>  <div className="cursor-default fixed flex justify-between items-center w-full px-24 py-8 z-10">
+                <div onClick={home} className="font-['Poppins'] font-bold text-3xl text-white">
                     DuyTruong
                     <span className="text-[#F1875E]">.</span>
                 </div>
