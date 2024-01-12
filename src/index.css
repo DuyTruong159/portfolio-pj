@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-    ::-webkit-scrollbar {
+    /* ::-webkit-scrollbar {
         display: none;
-    }
+    } */
     
     body {
         background-color: #082723;
