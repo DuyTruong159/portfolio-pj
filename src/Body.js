@@ -22,7 +22,7 @@ function Body() {
     const [changeSection, setChangeSection] = useState(true);
     const [backgroundImage, setBackGroundImage] = useState(UiUx);
     const [item, setItem] = useState(0);
-    const [scroll, setScroll] = useState(0);
+    const [scroll, setScroll] = useState();
 
     const menuTonggle = () => {
         setMenu(!menu);
@@ -36,12 +36,17 @@ function Body() {
         setChangeSection(false);
     };
     
-    const titleHover = (index) => {
-        setBackGroundImage(listTitle[index][0]);
-    };
-
     const ScrollTitles = (e) => {
-        setScroll(e.deltaY);
+        if (e.deltaY < 0) {
+            if(scroll !== 'up'){
+                setScroll('up');
+            }
+        }
+        if (e.deltaY > 0) {
+            if(scroll !== 'down'){
+                setScroll('down');
+            }
+        }
     }
 
     useEffect(() => {
@@ -49,6 +54,9 @@ function Body() {
         const main = document.querySelector('#main');
         const section1 = document.querySelector('#section1');
         const section2 = document.querySelector('#section2');
+        const scrollItems = document.querySelector('#scrollItems');
+
+        scrollItems.style.transform = `translateY(${listTitle[item][1]})`;
 
         if(changeSection) {
             section1.style.display = 'flex';
@@ -71,12 +79,15 @@ function Body() {
             }, 1000);
         }
 
-        if(scroll < 0) {
-            document.querySelector('#scrollItems').style.transform = 'translateY(-30%)';
-            
-        }
+        console.log(scroll);
+        // switch(scroll) {
+        //     case 'up':
+        //         console.log('up');
+        //     case 'down':
+        //         console.log('down');
+        // };
         
-    }, [changeSection, scroll]);
+    }, [changeSection, scroll, item]);
 
     return(
         <>
@@ -192,9 +203,9 @@ function Body() {
                 {/* Section 2 */}
                 <div className={`flex flex-[0_0_100vw] items-center px-24 py-36 text-white bg-cover transition-all duration-500 ${changeSection && 'hidden'}`} style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
                     <div className='w-full h-full overflow-hidden' onWheel={ScrollTitles}>
-                        <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%]' id='scrollItems'>
+                        <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%] transition duration-500' id='scrollItems'>
                         {titles.map((x, index) => ( 
-                            <div key={index} className='group/item w-full' id={`item-${index}`} onMouseEnter={() => titleHover(index)}>
+                            <div key={index} className='group/item w-full' id={`item-${index}`}>
                                 <div className='w-fit pb-8 border-b-2 border-solid flex gap-11 items-center'>
                                     <div className='flex items-baseline gap-20'>
                                         <span className='text-3xl font-normal'>{index + 1}.</span>
