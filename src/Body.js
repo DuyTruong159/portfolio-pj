@@ -11,11 +11,11 @@ function Body() {
 
     const titles = ["UI/UX", "Branding", "Social post", "Photography", "Film/Video"];
     const listTitle = {
-        0: UiUx,
-        1: Branding,
-        2: Socialpost,
-        3: Photography,
-        4: Film
+        0: [UiUx, '-5%'],
+        1: [Branding, '-30%'],
+        2: [Socialpost, '-50%'],
+        3: [Photography, '-70%'],
+        4: [Film, '-90%']
     };
 
     const [menu, setMenu] = useState(false);
@@ -28,53 +28,61 @@ function Body() {
         setMenu(!menu);
     }
 
-    const home = () => {
-        document.querySelector('#main').scrollBy({
-            left: -window.innerWidth,
-            behavior: "smooth"
-        });
-    }
-
-    const actionChangeSection = () => {
-        document.querySelector('#main').scrollBy({
-            left: window.innerWidth,
-            behavior: "smooth"
-        });
+    const logo = () => {
+        setChangeSection(true);
     }
 
     const scrollChangeSection = () => {
         setChangeSection(false);
-        actionChangeSection();
     };
     
     const titleHover = (index) => {
-        setBackGroundImage(listTitle[index]);
+        setBackGroundImage(listTitle[index][0]);
     };
 
     const ScrollTitles = (e) => {
-        const listItems = e.deltaY;
-
-        // listItems >= scroll ? setItem(item + 1) : setItem(item - 1);
-
-        // document.querySelector(`#item-${item}`).scrollIntoView({block: "center", behavior: "smooth"});
-        // setScroll(listItems);
-        console.log(listItems);
-        // console.log(item);
+        setScroll(e.deltaY);
     }
 
     useEffect(() => {
 
-        if(!changeSection) {
-            actionChangeSection();
+        const main = document.querySelector('#main');
+        const section1 = document.querySelector('#section1');
+        const section2 = document.querySelector('#section2');
+
+        if(changeSection) {
+            section1.style.display = 'flex';
+            main.scrollBy(window.innerWidth, 0);
+            main.scrollBy({
+                left: -window.innerWidth,
+                behavior: "smooth"
+            });
+            setTimeout(function () {
+                section2.style.display = 'none';
+            }, 1000);
+        } else {
+            section2.style.display = 'flex';
+            main.scrollBy({
+                left: window.innerWidth,
+                behavior: "smooth"
+            });
+            setTimeout(function () {
+                section1.style.display = 'none';
+            }, 1000);
+        }
+
+        if(scroll < 0) {
+            document.querySelector('#scrollItems').style.transform = 'translateY(-30%)';
+            
         }
         
-    }, [changeSection]);
+    }, [changeSection, scroll]);
 
     return(
         <>
             {/* Header */}
             <div className='cursor-default fixed flex justify-between items-center w-full px-24 py-8 z-10'>
-                <div onClick={home} className="font-['Poppins'] font-bold text-3xl text-white">
+                <div onClick={logo} className="font-['Poppins'] font-bold text-3xl text-white">
                     DuyTruong
                     <span className="text-[#F1875E]">.</span>
                 </div>
@@ -143,7 +151,7 @@ function Body() {
             <div className='h-screen flex overflow-y-hidden' id='main'>
 
                 {/* Section 1 */}
-                <div className='flex flex-[0_0_100vw] justify-center items-center px-36 relative'>
+                <div className='flex flex-[0_0_100vw] justify-center items-center px-36 relative' id='section1'>
                     <div className="flex flex-col items-center relative">
                         <svg className="w-full" xmlns="http://www.w3.org/2000/svg" width="1618" height="390" viewBox="0 0 1618 390" fill="none">
                             <path d="M227.695 160.65C227.695 185.96 222.388 208.258 211.774 227.542C201.161 246.827 185.723 261.893 165.46 272.74C145.439 283.347 121.559 288.65 93.8187 288.65H3V33.3729H93.8187C121.559 33.3729 145.439 38.6761 165.46 49.2825C185.723 59.6478 201.161 74.4727 211.774 93.7571C222.388 112.8 227.695 135.098 227.695 160.65ZM89.4767 243.09C116.976 243.09 138.203 235.859 153.158 221.395C168.355 206.932 175.953 186.684 175.953 160.65C175.953 134.375 168.355 114.006 153.158 99.5424C138.203 85.0791 116.976 77.8475 89.4767 77.8475H54.0177V243.09H89.4767Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
@@ -182,9 +190,9 @@ function Body() {
                 </div>
                 
                 {/* Section 2 */}
-                <div className={`flex flex-[0_0_100vw] items-center px-24 py-36 text-white bg-cover transition-all duration-500 ${changeSection && 'hidden'}`} style={{backgroundImage: `url(${backgroundImage})`}}>
-                    <div className='w-full flex flex-col items-start gap-28 h-full overflow-hidden' onWheel={ScrollTitles}>
-                        <div id='blank'><div className='h-[106px]'></div></div> 
+                <div className={`flex flex-[0_0_100vw] items-center px-24 py-36 text-white bg-cover transition-all duration-500 ${changeSection && 'hidden'}`} style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
+                    <div className='w-full h-full overflow-hidden' onWheel={ScrollTitles}>
+                        <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%]' id='scrollItems'>
                         {titles.map((x, index) => ( 
                             <div key={index} className='group/item w-full' id={`item-${index}`} onMouseEnter={() => titleHover(index)}>
                                 <div className='w-fit pb-8 border-b-2 border-solid flex gap-11 items-center'>
@@ -203,7 +211,7 @@ function Body() {
                                 </div>
                             </div> 
                         ))}
-                        <div id='blank'><div className='h-[106px]'></div></div> 
+                        </div>
                     </div>
                 </div>         
             </div> 
