@@ -22,7 +22,6 @@ function Body() {
     const [changeSection, setChangeSection] = useState(true);
     const [backgroundImage, setBackGroundImage] = useState(UiUx);
     const [item, setItem] = useState(0);
-    const [scroll, setScroll] = useState();
 
     const menuTonggle = () => {
         setMenu(!menu);
@@ -38,13 +37,13 @@ function Body() {
     
     const ScrollTitles = (e) => {
         if (e.deltaY < 0) {
-            if(scroll !== 'up'){
-                setScroll('up');
+            if(item > 0) {
+                setItem(item - 1);
             }
         }
         if (e.deltaY > 0) {
-            if(scroll !== 'down'){
-                setScroll('down');
+            if(item < 4) {
+                setItem(item + 1);
             }
         }
     }
@@ -56,8 +55,6 @@ function Body() {
         const section2 = document.querySelector('#section2');
         const scrollItems = document.querySelector('#scrollItems');
 
-        scrollItems.style.transform = `translateY(${listTitle[item][1]})`;
-
         if(changeSection) {
             section1.style.display = 'flex';
             main.scrollBy(window.innerWidth, 0);
@@ -67,7 +64,7 @@ function Body() {
             });
             setTimeout(function () {
                 section2.style.display = 'none';
-            }, 1000);
+            }, 800);
         } else {
             section2.style.display = 'flex';
             main.scrollBy({
@@ -76,18 +73,13 @@ function Body() {
             });
             setTimeout(function () {
                 section1.style.display = 'none';
-            }, 1000);
+            }, 800);
         }
 
-        console.log(scroll);
-        // switch(scroll) {
-        //     case 'up':
-        //         console.log('up');
-        //     case 'down':
-        //         console.log('down');
-        // };
+        scrollItems.style.transform = `translateY(${listTitle[item][1]})`;
+        setBackGroundImage(listTitle[item][0]);
         
-    }, [changeSection, scroll, item]);
+    }, [changeSection, item]);
 
     return(
         <>
@@ -178,7 +170,7 @@ function Body() {
                             <path d="M96.5998 17.0335L72.6114 31.4265L73.044 5.04098L73.0856 2.5H70.5443H46.7468H44.2263L44.2469 5.02049L44.4635 31.4487L20.4381 17.0335L18.2711 15.7332L16.9944 17.9143L4.84246 38.6738L3.54573 40.889L5.79443 42.1268L29.3772 55.1081L5.80994 67.8647L3.53653 69.0953L4.84246 71.3262L16.9944 92.0857L18.2711 94.2668L20.4381 92.9665L44.4635 78.5513L44.2469 104.98L44.2263 107.5H46.7468H70.5443H73.086L73.044 104.959L72.6114 78.7916L96.6142 92.9751L98.756 94.2407L100.032 92.1052L112.437 71.3457L113.775 69.1065L111.481 67.8647L87.914 55.1081L111.497 42.1268L113.766 40.8778L112.437 38.6543L100.032 17.8948L98.7474 15.7449L96.5998 17.0335Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                         </svg>
                     </div>
-                    <img className='h-full absolute bottom-0' src={Becky} alt='Becky'/>
+                    {/* <img className='h-full absolute bottom-0' src={Becky} alt='Becky'/> */}
                     <div className='absolute w-full px-24 py-12 bottom-0 flex justify-between items-end text-white'>
                         <div className='w-[630px] flex flex-col gap-8'>
                             <p className='text-8xl font-semibold'>Xin chào, mình là Trường</p>
@@ -205,13 +197,13 @@ function Body() {
                     <div className='w-full h-full overflow-hidden' onWheel={ScrollTitles}>
                         <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%] transition duration-500' id='scrollItems'>
                         {titles.map((x, index) => ( 
-                            <div key={index} className='group/item w-full' id={`item-${index}`}>
-                                <div className='w-fit pb-8 border-b-2 border-solid flex gap-11 items-center'>
+                            <div key={index} className={`w-full ${item != index && 'opacity-60'}`} id={`item-${index}`}>
+                                <div className='group/item w-fit pb-8 border-b-2 border-solid flex gap-11 items-center'>
                                     <div className='flex items-baseline gap-20'>
                                         <span className='text-3xl font-normal'>{index + 1}.</span>
                                         <div className='capitalize text-7xl font-medium'>{x}</div>
                                     </div>
-                                    <div className='overflow-hidden w-0 group-hover/item:w-[280px] transition-all duration-500'>
+                                    <div className={`overflow-hidden w-0 ${item == index && 'group-hover/item:w-[280px]'} transition-all duration-500`}>
                                         <div className='group w-[280px] bg-[#F6AB52] flex gap-3.5 items-baseline rounded-[50px] py-4 px-6 text-lg font-bold capitalize'>
                                             <span>Xem tất cả các dự án</span>
                                             <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
