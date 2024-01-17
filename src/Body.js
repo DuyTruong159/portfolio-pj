@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
 
 import Becky from './assets/becky.png';
-import UiUx from "./assets/bg-uiux.png";
-import Branding from "./assets/bg-branding.png";
-import Socialpost from "./assets/bg-socialpost.png";
-import Photography from "./assets/bg-photography.png";
-import Film from "./assets/bg-film.png";
+import UiUx from './assets/bg-uiux.png';
+import Branding from './assets/bg-branding.png';
+import Socialpost from './assets/bg-socialpost.png';
+import Photography from './assets/bg-photography.png';
+import Film from './assets/bg-film.png';
+
+import Item1 from './assets/item-1.jpg';
+import Item2 from './assets/item-2.jpg';
+import Item3 from './assets/item-3.jpg';
+import Item4 from './assets/item-4.jpg';
 
 function Body() {
 
@@ -20,8 +25,16 @@ function Body() {
 
     const [menu, setMenu] = useState(false);
     const [changeSection, setChangeSection] = useState(true);
+    const [scrollDirection, setScrollDirection] = useState('');
     const [backgroundImage, setBackGroundImage] = useState(UiUx);
     const [item, setItem] = useState(0);
+
+    const itemCarousel = [
+        [Item1, 'staarlabs', 'E-Commerce website'],
+        [Item2, 'Ươm app', 'Ứng dụng hộ trợ chăm sóc cây trồng'],
+        [Item3, 'Bandy Constructors', 'Business Website'],
+        [Item4, 'Pomodoro app', 'Ứng dụng quản lý thời gian']
+    ];
 
     const menuTonggle = () => {
         setMenu(!menu);
@@ -37,13 +50,19 @@ function Body() {
     
     const ScrollTitles = (e) => {
         if (e.deltaY < 0) {
-            if(item > 0) {
-                setItem(item - 1);
+            if(scrollDirection !== 'up') {
+                setScrollDirection('up');
+                if(item > 0) {
+                    setItem(item - 1);
+                }
             }
         }
         if (e.deltaY > 0) {
-            if(item < 4) {
-                setItem(item + 1);
+            if(scrollDirection !== 'down') {
+                setScrollDirection('down');
+                if(item < 4) {
+                    setItem(item + 1);
+                }
             }
         }
     }
@@ -62,7 +81,7 @@ function Body() {
                 left: -window.innerWidth,
                 behavior: "smooth"
             });
-            setTimeout(function () {
+            setTimeout(() => {
                 section2.style.display = 'none';
             }, 800);
         } else {
@@ -71,15 +90,16 @@ function Body() {
                 left: window.innerWidth,
                 behavior: "smooth"
             });
-            setTimeout(function () {
+            setTimeout(() => {
                 section1.style.display = 'none';
             }, 800);
         }
 
         scrollItems.style.transform = `translateY(${listTitle[item][1]})`;
         setBackGroundImage(listTitle[item][0]);
+        setTimeout(() => {setScrollDirection()}, 1000);
         
-    }, [changeSection, item]);
+    }, [changeSection, item, backgroundImage]);
 
     return(
         <>
@@ -216,7 +236,20 @@ function Body() {
                         ))}
                         </div>
                     </div>
-                </div>         
+                </div>
+                
+                {/* Section 3 */}
+                <div className='flex flex-col gap-8 flex-[0_0_100vw] justify-center px-24 text-white'>
+                    <div className='flex items-center gap-8'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" viewBox="0 0 54 44" fill="none">
+                            <path d="M23 41L3 22M3 22L23 3M3 22H51" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className='capitalize text-7xl font-medium'>UI - UX</span>
+                    </div>
+                    <div className='flex gap-16'>
+                        <Carousel props={itemCarousel} />
+                    </div>
+                </div>       
             </div> 
         </>
     )
@@ -226,6 +259,22 @@ function Title({props}) {
     return(
         <>
             {props.map((x, index) => ( <a key={index} className='bg-[#F6AA50] rounded-[50px] text-lg font-semibold uppercase px-10 py-3.5'>{x}</a> ))}
+        </>
+    )
+}
+
+function Carousel({props}) {
+    return(
+        <>
+            {props.map((x, index) => (
+                <div key={index} className='w-1/4 flex flex-col gap-6'>
+                    <img src={x[0]} />
+                    <div className='flex flex-col text-white/80'>
+                        <span className='uppercase text-3xl font-bold'>{x[1]}</span>
+                        <span>{x[2]}</span>
+                    </div>
+                </div>
+            ))}
         </>
     )
 }
