@@ -11,6 +11,11 @@ import Item1 from './assets/item-1.jpg';
 import Item2 from './assets/item-2.jpg';
 import Item3 from './assets/item-3.jpg';
 import Item4 from './assets/item-4.jpg';
+import Item5 from './assets/item-5.jpg';
+import Item6 from './assets/item-6.jpg';
+import Item7 from './assets/item-7.jpg';
+import Item8 from './assets/item-8.jpg';
+import Item9 from './assets/item-9.jpg';
 
 function Body() {
 
@@ -28,12 +33,18 @@ function Body() {
     const [scrollDirection, setScrollDirection] = useState('');
     const [backgroundImage, setBackGroundImage] = useState(UiUx);
     const [item, setItem] = useState(0);
+    const [clickItem, setClickItem] = useState();
 
     const itemCarousel = [
         [Item1, 'staarlabs', 'E-Commerce website'],
         [Item2, 'Ươm app', 'Ứng dụng hộ trợ chăm sóc cây trồng'],
-        [Item3, 'Bandy Constructors', 'Business Website'],
-        [Item4, 'Pomodoro app', 'Ứng dụng quản lý thời gian']
+        [Item3, 'Bandy Constructor', 'Business Website'],
+        [Item4, 'Pomodoro app', 'Ứng dụng quản lý thời gian'],
+        [Item5, 'luật thắng lợi', 'Business Website'],
+        [Item6, 'Dragonship App', 'Ứng dụng vận chuyển cho doanh nghiệp'],
+        [Item7, 'Affiliate Tool', 'Công cụ quản lý đơn hàng Affiliate'],
+        [Item8, 'all landing pages', 'Business Website'],
+        [Item9, 'Meditation App', 'Ứng dụng chữa lành tâm hồn']
     ];
 
     const menuTonggle = () => {
@@ -67,11 +78,24 @@ function Body() {
         }
     }
 
+    const hoverBackEnter = (e) => {
+        e.currentTarget.querySelector('path').setAttribute('stroke','#F6AA50');
+    }
+
+    const hoverBackLeave = (e) => {
+        e.currentTarget.querySelector('path').setAttribute('stroke','white');
+    }
+
+    const clickBackSection2 = () => {
+        setClickItem();
+    }
+
     useEffect(() => {
 
         const main = document.querySelector('#main');
         const section1 = document.querySelector('#section1');
         const section2 = document.querySelector('#section2');
+        const section3 = document.querySelector('#section3');
         const scrollItems = document.querySelector('#scrollItems');
 
         if(changeSection) {
@@ -95,11 +119,21 @@ function Body() {
             }, 800);
         }
 
+        if(clickItem) {
+            main.scrollBy({
+                left: window.innerWidth,
+                behavior: "smooth"
+            });
+            setTimeout(() => {
+                section2.style.display = 'none';
+            }, 800);
+        }
+
         scrollItems.style.transform = `translateY(${listTitle[item][1]})`;
         setBackGroundImage(listTitle[item][0]);
-        setTimeout(() => {setScrollDirection()}, 1000);
+        setTimeout(() => {setScrollDirection()}, 1500);
         
-    }, [changeSection, item, backgroundImage]);
+    }, [changeSection, item, backgroundImage, clickItem]);
 
     return(
         <>
@@ -217,14 +251,14 @@ function Body() {
                     <div className='w-full h-full overflow-hidden' onWheel={ScrollTitles}>
                         <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%] transition duration-500' id='scrollItems'>
                         {titles.map((x, index) => ( 
-                            <div key={index} className={`w-full ${item != index && 'opacity-60'}`} id={`item-${index}`}>
+                            <div key={index} className={`w-full ${item != index && 'opacity-60'}`}>
                                 <div className='group/item w-fit pb-8 border-b-2 border-solid flex gap-11 items-center'>
                                     <div className='flex items-baseline gap-20'>
                                         <span className='text-3xl font-normal'>{index + 1}.</span>
                                         <div className='capitalize text-7xl font-medium'>{x}</div>
                                     </div>
                                     <div className={`overflow-hidden w-0 ${item == index && 'group-hover/item:w-[280px]'} transition-all duration-500`}>
-                                        <div className='group w-[280px] bg-[#F6AB52] flex gap-3.5 items-baseline rounded-[50px] py-4 px-6 text-lg font-bold capitalize'>
+                                        <div className='group w-[280px] bg-[#F6AB52] flex gap-3.5 items-baseline rounded-[50px] py-4 px-6 text-lg font-bold capitalize' id={index} onClick={() => setClickItem(index + 1)}>
                                             <span>Xem tất cả các dự án</span>
                                             <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
                                                 before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
@@ -239,14 +273,14 @@ function Body() {
                 </div>
                 
                 {/* Section 3 */}
-                <div className='flex flex-col gap-8 flex-[0_0_100vw] justify-center px-24 text-white'>
+                <div className={`flex-col gap-8 flex-[0_0_100vw] justify-center px-24 text-white ${clickItem ? 'flex' : 'hidden'}`} id='section3'>
                     <div className='flex items-center gap-8'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" viewBox="0 0 54 44" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" id="sad" viewBox="0 0 54 44" fill="none" onMouseEnter={hoverBackEnter} onMouseLeave={hoverBackLeave} onClick={clickBackSection2}>
                             <path d="M23 41L3 22M3 22L23 3M3 22H51" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         <span className='capitalize text-7xl font-medium'>UI - UX</span>
                     </div>
-                    <div className='flex gap-16'>
+                    <div className='flex gap-16 overflow-scroll'>
                         <Carousel props={itemCarousel} />
                     </div>
                 </div>       
@@ -267,11 +301,23 @@ function Carousel({props}) {
     return(
         <>
             {props.map((x, index) => (
-                <div key={index} className='w-1/4 flex flex-col gap-6'>
-                    <img src={x[0]} />
-                    <div className='flex flex-col text-white/80'>
-                        <span className='uppercase text-3xl font-bold'>{x[1]}</span>
-                        <span>{x[2]}</span>
+                <div key={index} className='group flex flex-col gap-6 flex-[0_0_20%]'>
+                    <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} />
+                    <div className='relative h-44'>
+                        <div className='absolute flex flex-col gap-3'>
+                            <div className='flex flex-col text-white/80'>
+                                <p className='uppercase text-3xl font-bold'>{x[1]}</p>
+                                <p className='text-xl font-normal'>{x[2]}</p>
+                            </div>
+                            <div className='h-[28px]'>
+                                <div className='flex gap-2 items-center text-[#F6AA50] text-lg font-medium overflow-hidden h-0 group-hover:h-full transition-all duration-500'>
+                                    Xem trên Behance
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M4.1665 9.99996H15.8332M15.8332 9.99996L9.99984 4.16663M15.8332 9.99996L9.99984 15.8333" stroke="#F6AA50" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             ))}
