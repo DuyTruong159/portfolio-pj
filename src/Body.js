@@ -7,57 +7,27 @@ import Socialpost from './assets/bg-socialpost.png';
 import Photography from './assets/bg-photography.png';
 import Film from './assets/bg-film.png';
 
-import Item1 from './assets/item-1.jpg';
-import Item2 from './assets/item-2.jpg';
-import Item3 from './assets/item-3.jpg';
-import Item4 from './assets/item-4.jpg';
-import Item5 from './assets/item-5.jpg';
-import Item6 from './assets/item-6.jpg';
-import Item7 from './assets/item-7.jpg';
-import Item8 from './assets/item-8.jpg';
-import Item9 from './assets/item-9.jpg';
+import SectionItems from './SectionItems';
 
 function Body() {
 
+    const section = ['1' ,'2', '3'];
     const titles = ["UI/UX", "Branding", "Social post", "Photography", "Film/Video"];
     const listTitle = {
-        0: [UiUx, '-5%'],
-        1: [Branding, '-30%'],
-        2: [Socialpost, '-50%'],
-        3: [Photography, '-70%'],
-        4: [Film, '-90%']
+        0: [UiUx, '-5%', 'UI- UX'],
+        1: [Branding, '-30%', 'Branding'],
+        2: [Socialpost, '-50%', 'Social Post'],
+        3: [Photography, '-70%', 'Photography'],
+        4: [Film, '-90%', 'Film/VIdeo']
     };
-
+    
     const [menu, setMenu] = useState(false);
-    const [changeSection, setChangeSection] = useState(true);
+    const [changeSection, setChangeSection] = useState(1);
+    const [currentSection, setCurrentSection] = useState(1);
     const [scrollDirection, setScrollDirection] = useState('');
     const [backgroundImage, setBackGroundImage] = useState(UiUx);
     const [item, setItem] = useState(0);
-    const [clickItem, setClickItem] = useState();
-
-    const itemCarousel = [
-        [Item1, 'staarlabs', 'E-Commerce website'],
-        [Item2, 'Ươm app', 'Ứng dụng hộ trợ chăm sóc cây trồng'],
-        [Item3, 'Bandy Constructor', 'Business Website'],
-        [Item4, 'Pomodoro app', 'Ứng dụng quản lý thời gian'],
-        [Item5, 'luật thắng lợi', 'Business Website'],
-        [Item6, 'Dragonship App', 'Ứng dụng vận chuyển cho doanh nghiệp'],
-        [Item7, 'Affiliate Tool', 'Công cụ quản lý đơn hàng Affiliate'],
-        [Item8, 'all landing pages', 'Business Website'],
-        [Item9, 'Meditation App', 'Ứng dụng chữa lành tâm hồn']
-    ];
-
-    const menuTonggle = () => {
-        setMenu(!menu);
-    }
-
-    const logo = () => {
-        setChangeSection(true);
-    }
-
-    const scrollChangeSection = () => {
-        setChangeSection(false);
-    };
+    const [clickItem, setClickItem] = useState(0);
     
     const ScrollTitles = (e) => {
         if (e.deltaY < 0) {
@@ -78,56 +48,29 @@ function Body() {
         }
     }
 
-    const hoverBackEnter = (e) => {
-        e.currentTarget.querySelector('path').setAttribute('stroke','#F6AA50');
-    }
-
-    const hoverBackLeave = (e) => {
-        e.currentTarget.querySelector('path').setAttribute('stroke','white');
-    }
-
-    const clickBackSection2 = () => {
-        setClickItem();
-    }
-
     useEffect(() => {
 
         const main = document.querySelector('#main');
-        const section1 = document.querySelector('#section1');
-        const section2 = document.querySelector('#section2');
-        const section3 = document.querySelector('#section3');
         const scrollItems = document.querySelector('#scrollItems');
 
-        if(changeSection) {
-            section1.style.display = 'flex';
+        if(currentSection > changeSection) {
+            document.querySelector(`#section${changeSection}`).style.display = 'flex';
             main.scrollBy(window.innerWidth, 0);
             main.scrollBy({
                 left: -window.innerWidth,
                 behavior: "smooth"
             });
-            setTimeout(() => {
-                section2.style.display = 'none';
-            }, 800);
         } else {
-            section2.style.display = 'flex';
+            document.querySelector(`#section${changeSection}`).style.display = 'flex';
             main.scrollBy({
                 left: window.innerWidth,
                 behavior: "smooth"
             });
-            setTimeout(() => {
-                section1.style.display = 'none';
-            }, 800);
         }
-
-        if(clickItem) {
-            main.scrollBy({
-                left: window.innerWidth,
-                behavior: "smooth"
-            });
-            setTimeout(() => {
-                section2.style.display = 'none';
-            }, 800);
-        }
+        setCurrentSection(changeSection);
+        setTimeout(() => {
+            section.filter(s => !s.includes(changeSection)).map(e => document.querySelector(`#section${e}`).style.display = 'none');
+        }, 800);
 
         scrollItems.style.transform = `translateY(${listTitle[item][1]})`;
         setBackGroundImage(listTitle[item][0]);
@@ -139,7 +82,7 @@ function Body() {
         <>
             {/* Header */}
             <div className='cursor-default fixed flex justify-between items-center w-full px-24 py-8 z-10'>
-                <div onClick={logo} className="font-['Poppins'] font-bold text-3xl text-white">
+                <div onClick={() => setChangeSection(1)} className="font-['Poppins'] font-bold text-3xl text-white cursor-pointer">
                     DuyTruong
                     <span className="text-[#F1875E]">.</span>
                 </div>
@@ -180,7 +123,7 @@ function Body() {
                             </defs>
                         </svg>
                     </div>
-                    <div onClick={menuTonggle}>
+                    <div onClick={() => setMenu(!menu)}>
                     {menu ? 
                         (
                             <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -224,7 +167,7 @@ function Body() {
                             <path d="M96.5998 17.0335L72.6114 31.4265L73.044 5.04098L73.0856 2.5H70.5443H46.7468H44.2263L44.2469 5.02049L44.4635 31.4487L20.4381 17.0335L18.2711 15.7332L16.9944 17.9143L4.84246 38.6738L3.54573 40.889L5.79443 42.1268L29.3772 55.1081L5.80994 67.8647L3.53653 69.0953L4.84246 71.3262L16.9944 92.0857L18.2711 94.2668L20.4381 92.9665L44.4635 78.5513L44.2469 104.98L44.2263 107.5H46.7468H70.5443H73.086L73.044 104.959L72.6114 78.7916L96.6142 92.9751L98.756 94.2407L100.032 92.1052L112.437 71.3457L113.775 69.1065L111.481 67.8647L87.914 55.1081L111.497 42.1268L113.766 40.8778L112.437 38.6543L100.032 17.8948L98.7474 15.7449L96.5998 17.0335Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                         </svg>
                     </div>
-                    {/* <img className='h-full absolute bottom-0' src={Becky} alt='Becky'/> */}
+                    <img className='h-full absolute bottom-0' src={Becky} alt='Becky'/>
                     <div className='absolute w-full px-24 py-12 bottom-0 flex justify-between items-end text-white'>
                         <div className='w-[630px] flex flex-col gap-8'>
                             <p className='text-8xl font-semibold'>Xin chào, mình là Trường</p>
@@ -236,7 +179,7 @@ function Body() {
                             <p>Là một người sáng tạo đa nhiệm, trên con đường trở thành UI/UX Designer và 2D Graphics Designer thực thụ, đem đến cho dự án của mình sự độc đáo và chất lượng. Mình không chỉ đơn thuần là người thiết kế, mà còn là người nhiệt huyết, luôn tìm kiếm cơ hội để làm mới bản thân trong ngành.</p>
                             <a className='group cursor-pointer capitalize font-normal py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500
                                 hover:to-[#F6AA50] hover:shadow-[#F6AA50] hover:font-bold'
-                                onClick={scrollChangeSection}>
+                                onClick={() => setChangeSection(2)}>
                                 Các dự án của mình ở đây!
                                 <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
                                     before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
@@ -247,7 +190,7 @@ function Body() {
                 </div>
                 
                 {/* Section 2 */}
-                <div className={`flex flex-[0_0_100vw] items-center px-24 py-36 text-white bg-cover transition-all duration-500 ${changeSection && 'hidden'}`} style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
+                <div className='flex-[0_0_100vw] items-center px-24 py-36 text-white bg-cover transition-all duration-500 hidden' style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
                     <div className='w-full h-full overflow-hidden' onWheel={ScrollTitles}>
                         <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%] transition duration-500' id='scrollItems'>
                         {titles.map((x, index) => ( 
@@ -257,8 +200,8 @@ function Body() {
                                         <span className='text-3xl font-normal'>{index + 1}.</span>
                                         <div className='capitalize text-7xl font-medium'>{x}</div>
                                     </div>
-                                    <div className={`overflow-hidden w-0 ${item == index && 'group-hover/item:w-[280px]'} transition-all duration-500`}>
-                                        <div className='group w-[280px] bg-[#F6AB52] flex gap-3.5 items-baseline rounded-[50px] py-4 px-6 text-lg font-bold capitalize' id={index} onClick={() => setClickItem(index + 1)}>
+                                    <div className={`overflow-hidden w-0 ${item == index && 'group-hover/item:w-[280px]'} transition-all duration-500 cursor-pointer`}>
+                                        <div className='group w-[280px] bg-[#F6AB52] flex gap-3.5 items-baseline rounded-[50px] py-4 px-6 text-lg font-bold capitalize' id={index} onClick={() => {setClickItem(index); setChangeSection(3)}}>
                                             <span>Xem tất cả các dự án</span>
                                             <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
                                                 before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
@@ -273,16 +216,8 @@ function Body() {
                 </div>
                 
                 {/* Section 3 */}
-                <div className={`flex-col gap-8 flex-[0_0_100vw] justify-center px-24 text-white ${clickItem ? 'flex' : 'hidden'}`} id='section3'>
-                    <div className='flex items-center gap-8'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" id="sad" viewBox="0 0 54 44" fill="none" onMouseEnter={hoverBackEnter} onMouseLeave={hoverBackLeave} onClick={clickBackSection2}>
-                            <path d="M23 41L3 22M3 22L23 3M3 22H51" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                        <span className='capitalize text-7xl font-medium'>UI - UX</span>
-                    </div>
-                    <div className='flex gap-16 overflow-scroll'>
-                        <Carousel props={itemCarousel} />
-                    </div>
+                <div className='flex-col gap-8 flex-[0_0_100vw] justify-center px-24 text-white hidden' id='section3'>
+                    <SectionItems name={listTitle[clickItem][2]} back={(e) => {setChangeSection(e)}} item={clickItem}/>
                 </div>       
             </div> 
         </>
@@ -293,34 +228,6 @@ function Title({props}) {
     return(
         <>
             {props.map((x, index) => ( <a key={index} className='bg-[#F6AA50] rounded-[50px] text-lg font-semibold uppercase px-10 py-3.5'>{x}</a> ))}
-        </>
-    )
-}
-
-function Carousel({props}) {
-    return(
-        <>
-            {props.map((x, index) => (
-                <div key={index} className='group flex flex-col gap-6 flex-[0_0_20%]'>
-                    <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} />
-                    <div className='relative h-44'>
-                        <div className='absolute flex flex-col gap-3'>
-                            <div className='flex flex-col text-white/80'>
-                                <p className='uppercase text-3xl font-bold'>{x[1]}</p>
-                                <p className='text-xl font-normal'>{x[2]}</p>
-                            </div>
-                            <div className='h-[28px]'>
-                                <div className='flex gap-2 items-center text-[#F6AA50] text-lg font-medium overflow-hidden h-0 group-hover:h-full transition-all duration-500'>
-                                    Xem trên Behance
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path d="M4.1665 9.99996H15.8332M15.8332 9.99996L9.99984 4.16663M15.8332 9.99996L9.99984 15.8333" stroke="#F6AA50" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ))}
         </>
     )
 }
