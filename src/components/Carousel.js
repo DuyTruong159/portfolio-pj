@@ -17,6 +17,21 @@ import ItemBranding6 from '../assets/item-branding-6.jpg';
 import ItemBranding7 from '../assets/item-branding-7.jpg';
 import ItemBranding8 from '../assets/item-branding-8.jpg';
 
+import ItemSocialPost1 from '../assets/item-socialpost-1.jpg';
+import ItemSocialPost2 from '../assets/item-socialpost-2.jpg';
+import ItemSocialPost3 from '../assets/item-socialpost-3.jpg';
+import ItemSocialPost4 from '../assets/item-socialpost-4.jpg';
+import ItemSocialPost5 from '../assets/item-socialpost-5.jpg';
+import ItemSocialPost6 from '../assets/item-socialpost-6.jpg';
+import ItemSocialPost7 from '../assets/item-socialpost-7.jpg';
+import ItemSocialPost8 from '../assets/item-socialpost-8.jpg';
+import ItemSocialPost9 from '../assets/item-socialpost-9.jpg';
+
+import ItemPhotography1 from '../assets/item-photography-1.jpg';
+import ItemPhotography2 from '../assets/item-photography-2.jpg';
+import ItemPhotography3 from '../assets/item-photography-3.jpg';
+import ItemPhotography4 from '../assets/item-photography-4.jpg';
+
 function Carousel(props) {
 
     const itemCarousel = [
@@ -39,6 +54,21 @@ function Carousel(props) {
             [ItemBranding6, 'Nghĩa Ân - Bò Khô', 'branding identity'],
             [ItemBranding7, 'Clara - Vải lụa tơ sen', 'branding identity'],
             [ItemBranding8, 'Sblazer', 'branding identity']
+        ], [
+            [ItemSocialPost1, 'Coffee Day', 'Social image'],
+            [ItemSocialPost2, 'Chuyện ngày xuân', 'Social image'],
+            [ItemSocialPost3, 'lotus Fabric', 'Social image'],
+            [ItemSocialPost4, 'Skin Detective app', 'Social image'],
+            [ItemSocialPost5, 'GetGo App', 'Social image'],
+            [ItemSocialPost6, 'CocoNala', 'Social image'],
+            [ItemSocialPost7, 'Combo Smokio cassper', 'Social image'],
+            [ItemSocialPost8, 'Combo Saffron', 'Social image'],
+            [ItemSocialPost9, 'Vnfs', 'Social image']
+        ], [
+            [ItemPhotography1, 'tạp chí môi trường', 'Photography'],
+            [ItemPhotography2, 'tạp chí môi trường', 'Photography'],
+            [ItemPhotography3, 'Trà hoa việt - Hương sen', 'Photography'],
+            [ItemPhotography4, 'INHERE - SAFFRON', 'Photography']
         ]
     ];
 

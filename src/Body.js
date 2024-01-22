@@ -216,7 +216,7 @@ function Body() {
                 </div>
                 
                 {/* Section 3 */}
-                <div className='flex-col gap-8 flex-[0_0_100vw] justify-end px-24 py-10 text-white hidden' id='section3'>
+                <div className='flex-col gap-8 flex-[0_0_100vw] justify-center px-24 text-white bg-cover hidden' style={clickItem == 4 ? { backgroundImage: `url(${backgroundImage})` } : {}} id='section3'>
                     <SectionItems name={listTitle[clickItem][2]} back={(e) => {setChangeSection(e)}} item={clickItem}/>
                 </div>       
             </div> 
