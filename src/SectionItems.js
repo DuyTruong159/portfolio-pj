@@ -13,7 +13,7 @@ function SectionItems(props) {
                 </svg>
                 <span className='capitalize text-7xl font-medium'>{props.name}</span>
             </div>
-            <div className='flex gap-16 overflow-scroll'>
+            <div className='flex gap-16 overflow-x-scroll' id="scroll">
                 <Carousel item={props.item}/>
             </div>
         </>
