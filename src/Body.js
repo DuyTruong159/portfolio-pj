@@ -241,7 +241,7 @@ function Body() {
                                 <p className='capitalize text-lg font-bold'>Ui/Ux - Graphic Designer</p>
                             </div>
                         </div>
-                        <div className='w-3/4 flex flex-col'>
+                        <div className='w-3/4 flex flex-col gap-20'>
                             <div className='flex gap-14 border-b border-white/20 pb-8'>
                                 <div className='flex gap-3 items-center'>
                                     <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -291,9 +291,16 @@ function Body() {
                                     <p className='capitalize italic text-4xl font-bold'>Tóm tắt về mình</p>
                                     <p className='text-lg font-normal'>Xin chào, mình là Ui/Ux Designer và Graphic Designer, mình đam mê sáng tạo, không ngừng tìm hiểu và phát triển. Với kinh nghiệm tham gia nhiều dự án, mình mang đến giải pháp sáng tạo và tối ưu, đồng thời xem mỗi dự án như cơ hội học hỏi và trải nghiệm mới. Sự đa nhiệm và khả năng làm việc nhóm của mình đã giúp tôi góp phần tích cực vào mỗi dự án, mang lại giá trị đặc biệt qua từng ý tưởng thiết kế.</p>
                                 </div>
-                                <div className='w-1/2'>
-                                    sdgag
+                                <div className='w-1/2 flex flex-col gap-3'>
+                                    <p className='capitalize italic text-4xl font-bold'><span className='not-italic text-[#FFB147]'>20+</span> dự án đã thực hiện</p>
+                                    <p className='text-lg font-normal'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
                                 </div>
+                            </div>
+                            <div className='w-3/5 flex gap-3 bg-[#142C29] px-10 py-6'>
+                                <svg className='min-w-16' xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
+                                    <path d="M12.2704 46.1894C9.5237 43.272 8.04903 40 8.04904 34.696C8.04904 25.3627 14.601 16.9974 24.129 12.8614L26.5104 16.536C17.617 21.3467 15.8784 27.5894 15.185 31.5254C16.617 30.784 18.4917 30.5254 20.329 30.696C25.1397 31.1414 28.9317 35.0907 28.9317 40C28.9317 42.4754 27.9484 44.8494 26.198 46.5997C24.4477 48.35 22.0737 49.3334 19.5984 49.3334C16.737 49.3334 14.001 48.0267 12.2704 46.1894ZM38.937 46.1894C36.1904 43.272 34.7157 40 34.7157 34.696C34.7157 25.3627 41.2677 16.9974 50.7957 12.8614L53.177 16.536C44.2837 21.3467 42.545 27.5894 41.8517 31.5254C43.2837 30.784 45.1584 30.5254 46.9957 30.696C51.8064 31.1414 55.5957 35.0907 55.5957 40C55.5957 42.4754 54.6124 44.8494 52.862 46.5997C51.1117 48.35 48.7377 49.3334 46.2624 49.3334C43.401 49.3334 40.665 48.0267 38.9344 46.1894L38.937 46.1894Z" fill="#FFB147"/>
+                                </svg>
+                                <p className='italic text-xl font-semibold'>“Sự hoàn hảo của thiết kế không chỉ nằm trong sự hấp dẫn hình thức mà còn phản ánh ở khả năng làm việc mượt mà và hiệu quả.” <span className='text-[#CACACA]'>- James Dyso</span></p>
                             </div>
                         </div>
                     </div>
