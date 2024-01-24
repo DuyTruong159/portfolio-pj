@@ -21,6 +21,8 @@ function Body() {
         3: [Photography, '-70%', 'Photography'],
         4: [Film, '-90%', 'Film/VIdeo']
     };
+    const skills = ['website Ui/Ux', 'Mobile App Ui/Ux', 'Dashboard Ui/ux', 'nhận diện thương hiệu', 'Visual thương hiệu',
+                    'hình ảnh social', 'xử lý hình ảnh', 'ấn phẩm / bao bì', 'chụp ảnh sản phẩm', 'chỉnh sửa Video'];
     
     const [menu, setMenu] = useState(false);
     const [changeSection, setChangeSection] = useState(1);
@@ -233,74 +235,95 @@ function Body() {
                 </div> 
 
                 <div className='h-screen pt-24 px-24 text-white'>
-                    <div className='flex gap-36'>
-                        <div className='w-1/4 flex flex-col items-center gap-14'>
-                            <img src={Avatar}/>
-                            <div className='flex flex-col items-center gap-4 text-center'>
-                                <p className='uppercase text-[#FFB147] text-3xl font-bold'>Chiem Van Loc</p>
-                                <p className='capitalize text-lg font-bold'>Ui/Ux - Graphic Designer</p>
+                    <div className='h-full overflow-y-scroll flex flex-col gap-28'>
+                        <div className='flex items-center gap-36'>
+                            <div className='w-1/4 flex flex-col items-center gap-14'>
+                                {/* <img src={Avatar}/> */}
+                                <div className='flex flex-col items-center gap-4 text-center'>
+                                    <p className='uppercase text-[#FFB147] text-5xl font-bold'>Chiem Van Loc</p>
+                                    <p className='capitalize text-3xl font-bold'>Ui/Ux - Graphic Designer</p>
+                                </div>
+                            </div>
+                            <div className='w-3/4 flex flex-col gap-20'>
+                                <div className='flex gap-14 border-b border-white/20 pb-8'>
+                                    <div className='flex gap-3 items-center'>
+                                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
+                                            <g clipPath="url(#clip0_165_737)">
+                                                <path fillRule="evenodd" clipRule="evenodd" d="M12.8668 13.182C14.6242 11.4246 17.4734 11.4246 19.2308 13.182C20.9882 14.9393 20.9882 17.7886 19.2308 19.5459C18.5767 20.2001 17.7713 20.6107 16.9272 20.7779L19.4131 23.2637C19.5802 22.4197 19.9909 21.6143 20.645 20.9602C22.4024 19.2028 25.2516 19.2028 27.009 20.9602C28.7663 22.7175 28.7663 25.5668 27.009 27.3241C25.3711 28.962 22.7848 29.0733 21.018 27.6582L20.9986 27.6777L20.645 27.3241L12.8668 19.5459L12.5133 19.1924L12.5327 19.173C11.1176 17.4061 11.229 14.8198 12.8668 13.182ZM22.0592 25.9099C23.0355 26.8862 24.6185 26.8862 25.5948 25.9099C26.5711 24.9336 26.5711 23.3507 25.5948 22.3744C24.6185 21.3981 23.0355 21.3981 22.0592 22.3744C21.0829 23.3507 21.0829 24.9336 22.0592 25.9099ZM17.8166 18.1317C16.8403 19.108 15.2574 19.108 14.2811 18.1317C13.3048 17.1554 13.3048 15.5725 14.2811 14.5962C15.2574 13.6199 16.8403 13.6199 17.8166 14.5962C18.7929 15.5725 18.7929 17.1554 17.8166 18.1317Z" fill="white"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_165_737">
+                                                    <rect width="20" height="20" fill="white" transform="translate(10.0488 10)"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        0933-348-018
+                                    </div>
+                                    <div className='flex gap-3 items-center'>
+                                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
+                                            <g clipPath="url(#clip0_165_749)">
+                                                <path fillRule="evenodd" clipRule="evenodd" d="M13.0488 12C11.392 12 10.0488 13.3431 10.0488 15V25C10.0488 26.6569 11.392 28 13.0488 28H27.0488C28.7057 28 30.0488 26.6569 30.0488 25V15C30.0488 13.3431 28.7057 12 27.0488 12H13.0488ZM12.1401 14.5819C12.2984 14.2384 12.6458 14 13.0488 14H27.0488C27.4519 14 27.7992 14.2384 27.9575 14.5819L20.6628 20.2556C20.3017 20.5365 19.796 20.5365 19.4349 20.2556L12.1401 14.5819ZM12.0488 17.0446V22.865L15.6614 19.8544L12.0488 17.0446ZM12.1317 25.3993C12.2859 25.7529 12.6385 26 13.0488 26H27.0488C27.4592 26 27.8118 25.7529 27.9659 25.3993L22.8203 21.1113L21.8906 21.8343C20.8073 22.6769 19.2903 22.6769 18.207 21.8343L17.2774 21.1113L12.1317 25.3993ZM28.0488 22.865V17.0446L24.4362 19.8544L28.0488 22.865Z" fill="white"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_165_749">
+                                                    <rect width="20" height="20" fill="white" transform="translate(10.0488 10)"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        chiemloc020203@gmail.com
+                                    </div>
+                                    <div className='flex gap-3 items-center'>
+                                        <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
+                                            <g clipPath="url(#clip0_165_755)">
+                                                <path fillRule="evenodd" clipRule="evenodd" d="M24.3501 19.8553L20.0488 26.9501L15.7476 19.8553C13.6613 16.4141 16.0853 11.9709 20.0488 11.9709C24.0124 11.9709 26.4363 16.4141 24.3501 19.8553ZM14.1064 20.8927C11.2241 16.1385 14.5729 10 20.0488 10C25.5247 10 28.8735 16.1385 25.9913 20.8927L20.6915 29.6344C20.396 30.1219 19.7016 30.1219 19.4061 29.6344L14.1064 20.8927ZM20.049 14.9273C18.983 14.9273 18.1188 15.8097 18.1188 16.8982C18.1188 17.9867 18.983 18.8691 20.049 18.8691C21.115 18.8691 21.9792 17.9867 21.9792 16.8982C21.9792 15.8097 21.115 14.9273 20.049 14.9273Z" fill="white"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_165_755">
+                                                <rect width="20" height="20" fill="white" transform="translate(10.0488 10)"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        Ho Chi Minh, Viet Nam
+                                    </div>
+                                </div>
+                                <div className='flex gap-14'>
+                                    <div className='w-1/2 flex flex-col gap-3'>
+                                        <p className='capitalize italic text-4xl font-bold'>Tóm tắt về mình</p>
+                                        <p className='text-lg font-normal'>Xin chào, mình là Ui/Ux Designer và Graphic Designer, mình đam mê sáng tạo, không ngừng tìm hiểu và phát triển. Với kinh nghiệm tham gia nhiều dự án, mình mang đến giải pháp sáng tạo và tối ưu, đồng thời xem mỗi dự án như cơ hội học hỏi và trải nghiệm mới. Sự đa nhiệm và khả năng làm việc nhóm của mình đã giúp tôi góp phần tích cực vào mỗi dự án, mang lại giá trị đặc biệt qua từng ý tưởng thiết kế.</p>
+                                    </div>
+                                    <div className='w-1/2 flex flex-col gap-3'>
+                                        <p className='capitalize italic text-4xl font-bold'><span className='not-italic text-[#FFB147]'>20+</span> dự án đã thực hiện</p>
+                                        <p className='text-lg font-normal'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
+                                    </div>
+                                </div>
+                                <div className='w-3/5 flex gap-3 bg-[#142C29] px-10 py-6'>
+                                    <svg className='min-w-16' xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
+                                        <path d="M12.2704 46.1894C9.5237 43.272 8.04903 40 8.04904 34.696C8.04904 25.3627 14.601 16.9974 24.129 12.8614L26.5104 16.536C17.617 21.3467 15.8784 27.5894 15.185 31.5254C16.617 30.784 18.4917 30.5254 20.329 30.696C25.1397 31.1414 28.9317 35.0907 28.9317 40C28.9317 42.4754 27.9484 44.8494 26.198 46.5997C24.4477 48.35 22.0737 49.3334 19.5984 49.3334C16.737 49.3334 14.001 48.0267 12.2704 46.1894ZM38.937 46.1894C36.1904 43.272 34.7157 40 34.7157 34.696C34.7157 25.3627 41.2677 16.9974 50.7957 12.8614L53.177 16.536C44.2837 21.3467 42.545 27.5894 41.8517 31.5254C43.2837 30.784 45.1584 30.5254 46.9957 30.696C51.8064 31.1414 55.5957 35.0907 55.5957 40C55.5957 42.4754 54.6124 44.8494 52.862 46.5997C51.1117 48.35 48.7377 49.3334 46.2624 49.3334C43.401 49.3334 40.665 48.0267 38.9344 46.1894L38.937 46.1894Z" fill="#FFB147"/>
+                                    </svg>
+                                    <p className='italic text-xl font-semibold'>“Sự hoàn hảo của thiết kế không chỉ nằm trong sự hấp dẫn hình thức mà còn phản ánh ở khả năng làm việc mượt mà và hiệu quả.” <span className='text-[#CACACA]'>- James Dyso</span></p>
+                                </div>
                             </div>
                         </div>
-                        <div className='w-3/4 flex flex-col gap-20'>
-                            <div className='flex gap-14 border-b border-white/20 pb-8'>
-                                <div className='flex gap-3 items-center'>
-                                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
-                                        <g clipPath="url(#clip0_165_737)">
-                                            <path fillRule="evenodd" clipRule="evenodd" d="M12.8668 13.182C14.6242 11.4246 17.4734 11.4246 19.2308 13.182C20.9882 14.9393 20.9882 17.7886 19.2308 19.5459C18.5767 20.2001 17.7713 20.6107 16.9272 20.7779L19.4131 23.2637C19.5802 22.4197 19.9909 21.6143 20.645 20.9602C22.4024 19.2028 25.2516 19.2028 27.009 20.9602C28.7663 22.7175 28.7663 25.5668 27.009 27.3241C25.3711 28.962 22.7848 29.0733 21.018 27.6582L20.9986 27.6777L20.645 27.3241L12.8668 19.5459L12.5133 19.1924L12.5327 19.173C11.1176 17.4061 11.229 14.8198 12.8668 13.182ZM22.0592 25.9099C23.0355 26.8862 24.6185 26.8862 25.5948 25.9099C26.5711 24.9336 26.5711 23.3507 25.5948 22.3744C24.6185 21.3981 23.0355 21.3981 22.0592 22.3744C21.0829 23.3507 21.0829 24.9336 22.0592 25.9099ZM17.8166 18.1317C16.8403 19.108 15.2574 19.108 14.2811 18.1317C13.3048 17.1554 13.3048 15.5725 14.2811 14.5962C15.2574 13.6199 16.8403 13.6199 17.8166 14.5962C18.7929 15.5725 18.7929 17.1554 17.8166 18.1317Z" fill="white"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_165_737">
-                                                <rect width="20" height="20" fill="white" transform="translate(10.0488 10)"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    0933-348-018
-                                </div>
-                                <div className='flex gap-3 items-center'>
-                                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
-                                        <g clipPath="url(#clip0_165_749)">
-                                            <path fillRule="evenodd" clipRule="evenodd" d="M13.0488 12C11.392 12 10.0488 13.3431 10.0488 15V25C10.0488 26.6569 11.392 28 13.0488 28H27.0488C28.7057 28 30.0488 26.6569 30.0488 25V15C30.0488 13.3431 28.7057 12 27.0488 12H13.0488ZM12.1401 14.5819C12.2984 14.2384 12.6458 14 13.0488 14H27.0488C27.4519 14 27.7992 14.2384 27.9575 14.5819L20.6628 20.2556C20.3017 20.5365 19.796 20.5365 19.4349 20.2556L12.1401 14.5819ZM12.0488 17.0446V22.865L15.6614 19.8544L12.0488 17.0446ZM12.1317 25.3993C12.2859 25.7529 12.6385 26 13.0488 26H27.0488C27.4592 26 27.8118 25.7529 27.9659 25.3993L22.8203 21.1113L21.8906 21.8343C20.8073 22.6769 19.2903 22.6769 18.207 21.8343L17.2774 21.1113L12.1317 25.3993ZM28.0488 22.865V17.0446L24.4362 19.8544L28.0488 22.865Z" fill="white"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_165_749">
-                                                <rect width="20" height="20" fill="white" transform="translate(10.0488 10)"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    chiemloc020203@gmail.com
-                                </div>
-                                <div className='flex gap-3 items-center'>
-                                    <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
-                                        <g clipPath="url(#clip0_165_755)">
-                                            <path fillRule="evenodd" clipRule="evenodd" d="M24.3501 19.8553L20.0488 26.9501L15.7476 19.8553C13.6613 16.4141 16.0853 11.9709 20.0488 11.9709C24.0124 11.9709 26.4363 16.4141 24.3501 19.8553ZM14.1064 20.8927C11.2241 16.1385 14.5729 10 20.0488 10C25.5247 10 28.8735 16.1385 25.9913 20.8927L20.6915 29.6344C20.396 30.1219 19.7016 30.1219 19.4061 29.6344L14.1064 20.8927ZM20.049 14.9273C18.983 14.9273 18.1188 15.8097 18.1188 16.8982C18.1188 17.9867 18.983 18.8691 20.049 18.8691C21.115 18.8691 21.9792 17.9867 21.9792 16.8982C21.9792 15.8097 21.115 14.9273 20.049 14.9273Z" fill="white"/>
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_165_755">
-                                            <rect width="20" height="20" fill="white" transform="translate(10.0488 10)"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                    Ho Chi Minh, Viet Nam
-                                </div>
+                        <div className='bg-[#142C29] py-16 px-24 flex gap-28'>
+                            <div className='w-1/3 text-lg'>
+                                <p className='italic font-semibold pb-4'>Chuyên môn</p>
+                                <p className='uppercase text-4xl font-bold pb-6'>chuyên môn - kĩ năng</p>
+                                <p className='font-normal'>Với khả năng đa nhiệm độc đáo trong thiết kế, mình không chỉ tập trung vào Ui/Ux và Graphic mà còn tích hợp nhiều kỹ năng khác nhau. Sự kết hợp này giúp mình mang lại những giải pháp sáng tạo và hiệu quả trong mọi dự án.</p>
                             </div>
-                            <div className='flex gap-14'>
-                                <div className='w-1/2 flex flex-col gap-3'>
-                                    <p className='capitalize italic text-4xl font-bold'>Tóm tắt về mình</p>
-                                    <p className='text-lg font-normal'>Xin chào, mình là Ui/Ux Designer và Graphic Designer, mình đam mê sáng tạo, không ngừng tìm hiểu và phát triển. Với kinh nghiệm tham gia nhiều dự án, mình mang đến giải pháp sáng tạo và tối ưu, đồng thời xem mỗi dự án như cơ hội học hỏi và trải nghiệm mới. Sự đa nhiệm và khả năng làm việc nhóm của mình đã giúp tôi góp phần tích cực vào mỗi dự án, mang lại giá trị đặc biệt qua từng ý tưởng thiết kế.</p>
-                                </div>
-                                <div className='w-1/2 flex flex-col gap-3'>
-                                    <p className='capitalize italic text-4xl font-bold'><span className='not-italic text-[#FFB147]'>20+</span> dự án đã thực hiện</p>
-                                    <p className='text-lg font-normal'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
-                                </div>
+                            <div className='w-2/3 grid grid-cols-2 gap-y-8 gap-x-28'>
+                                {skills.map((x, index) => (
+                                    <p key={index} className='capitalize text-3xl font-bold border-b border-solid border-white/20 pb-5'>{x}</p>
+                                ))}
                             </div>
-                            <div className='w-3/5 flex gap-3 bg-[#142C29] px-10 py-6'>
-                                <svg className='min-w-16' xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
-                                    <path d="M12.2704 46.1894C9.5237 43.272 8.04903 40 8.04904 34.696C8.04904 25.3627 14.601 16.9974 24.129 12.8614L26.5104 16.536C17.617 21.3467 15.8784 27.5894 15.185 31.5254C16.617 30.784 18.4917 30.5254 20.329 30.696C25.1397 31.1414 28.9317 35.0907 28.9317 40C28.9317 42.4754 27.9484 44.8494 26.198 46.5997C24.4477 48.35 22.0737 49.3334 19.5984 49.3334C16.737 49.3334 14.001 48.0267 12.2704 46.1894ZM38.937 46.1894C36.1904 43.272 34.7157 40 34.7157 34.696C34.7157 25.3627 41.2677 16.9974 50.7957 12.8614L53.177 16.536C44.2837 21.3467 42.545 27.5894 41.8517 31.5254C43.2837 30.784 45.1584 30.5254 46.9957 30.696C51.8064 31.1414 55.5957 35.0907 55.5957 40C55.5957 42.4754 54.6124 44.8494 52.862 46.5997C51.1117 48.35 48.7377 49.3334 46.2624 49.3334C43.401 49.3334 40.665 48.0267 38.9344 46.1894L38.937 46.1894Z" fill="#FFB147"/>
-                                </svg>
-                                <p className='italic text-xl font-semibold'>“Sự hoàn hảo của thiết kế không chỉ nằm trong sự hấp dẫn hình thức mà còn phản ánh ở khả năng làm việc mượt mà và hiệu quả.” <span className='text-[#CACACA]'>- James Dyso</span></p>
+                        </div>
+                        <div className='bg-[#142C29] py-16 px-24 flex gap-28'>
+                            <div className='w-1/3 text-lg'>
+                                <p className='italic font-semibold pb-4'>Kinh nghiệm</p>
+                                <p className='uppercase text-4xl font-bold pb-6'>Kinh nghiệm làm việc</p>
+                                <p className='font-normal'>Mình luôn dành sự quan tâm và tập trung cao vào công việc, không ngừng trau dồi kiến thức và phát triển bản thân. Đối với mình, công việc không chỉ là nhiệm vụ hàng ngày mà còn là cơ hội để không ngừng học hỏi và đặt ra những thách thức mới, nhằm trở thành phiên bản tốt nhất cho chính mình và đồng nghiệp.</p>
                             </div>
                         </div>
                     </div>
