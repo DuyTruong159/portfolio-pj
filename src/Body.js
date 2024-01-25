@@ -234,7 +234,7 @@ function Body() {
                     </div>       
                 </div> 
 
-                <div className='h-screen pt-24 px-24 text-white'>
+                <div className='h-screen py-24 px-24 text-white'>
                     <div className='h-full overflow-y-scroll flex flex-col gap-28'>
                         <div className='flex items-center gap-36'>
                             <div className='w-1/4 flex flex-col items-center gap-14'>
@@ -324,6 +324,54 @@ function Body() {
                                 <p className='italic font-semibold pb-4'>Kinh nghiệm</p>
                                 <p className='uppercase text-4xl font-bold pb-6'>Kinh nghiệm làm việc</p>
                                 <p className='font-normal'>Mình luôn dành sự quan tâm và tập trung cao vào công việc, không ngừng trau dồi kiến thức và phát triển bản thân. Đối với mình, công việc không chỉ là nhiệm vụ hàng ngày mà còn là cơ hội để không ngừng học hỏi và đặt ra những thách thức mới, nhằm trở thành phiên bản tốt nhất cho chính mình và đồng nghiệp.</p>
+                            </div>
+                            <div className='w-2/3 flex justify-between gap-28'>
+                                <div className='w-7/12 flex flex-col gap-8'>
+                                    <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20'>
+                                        <div className='flex justify-between italic text-lg font-bold'>
+                                            <p>9/2022 - 1/2024</p>
+                                            <p>Tech-One.io Agency</p>
+                                        </div>
+                                        <div className='flex justify-between items-center capitalize text-3xl font-bold'>
+                                            <p>Graphic Designer</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20'>
+                                        <div className='flex justify-between italic text-lg font-bold'>
+                                            <p>8/2023 - 1/2024</p>
+                                            <p>Atseeds Agency</p>
+                                        </div>
+                                        <div className='flex justify-between items-center capitalize text-3xl font-bold'>
+                                            <p>freelancer Ui/Ux Designer</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20'>
+                                        <div className='flex justify-between italic text-lg font-bold'>
+                                            <p>5/2022 - Hiện Tại</p>
+                                        </div>
+                                        <div className='flex justify-between items-center capitalize text-3xl font-bold'>
+                                            <p>freelancer 2D Graphic</p>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='flex items-end'>
+                                    <a className='group cursor-pointer capitalize font-normal py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500
+                                        hover:to-[#F6AA50] hover:shadow-[#F6AA50] hover:font-bold'>
+                                        Liên hệ công việc ở đây
+                                        <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
+                                            before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
+                                            after:content-[""] after:absolute after:bg-white after:rounded-full after:h-0.5 after:w-3 after:rotate-45 after:-right-px after:bottom-1'></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
