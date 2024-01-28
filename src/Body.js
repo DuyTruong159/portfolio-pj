@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Avatar from './assets/avatar.png';
 import Becky from './assets/becky.png';
@@ -31,6 +31,7 @@ function Body() {
     const [backgroundImage, setBackGroundImage] = useState(UiUx);
     const [item, setItem] = useState(0);
     const [clickItem, setClickItem] = useState(0);
+    const [clickJob, setClickJob] = useState(false);
     
     const ScrollTitles = (e) => {
         if (e.deltaY < 0) {
@@ -327,41 +328,26 @@ function Body() {
                             </div>
                             <div className='w-2/3 flex justify-between gap-28'>
                                 <div className='w-7/12 flex flex-col gap-8'>
-                                    <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20'>
-                                        <div className='flex justify-between italic text-lg font-bold'>
-                                            <p>9/2022 - 1/2024</p>
-                                            <p>Tech-One.io Agency</p>
-                                        </div>
-                                        <div className='flex justify-between items-center capitalize text-3xl font-bold'>
-                                            <p>Graphic Designer</p>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20'>
-                                        <div className='flex justify-between italic text-lg font-bold'>
-                                            <p>8/2023 - 1/2024</p>
-                                            <p>Atseeds Agency</p>
-                                        </div>
-                                        <div className='flex justify-between items-center capitalize text-3xl font-bold'>
-                                            <p>freelancer Ui/Ux Designer</p>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20'>
-                                        <div className='flex justify-between italic text-lg font-bold'>
-                                            <p>5/2022 - Hiện Tại</p>
-                                        </div>
-                                        <div className='flex justify-between items-center capitalize text-3xl font-bold'>
-                                            <p>freelancer 2D Graphic</p>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                                <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
-                                            </svg>
-                                        </div>
-                                    </div>
+                                    <Job time='9/2022 - 1/2024' place='Tech-One.io Agency' title='Graphic Designer'
+                                        description={[
+                                            "Designing the interface and researching user experience on the website and dashboard.",
+                                            "Designing various landing pages.",
+                                            "Discussing and collaborating with various teams to propose solutions, address issues, and optimize the internal and customer-facing website.",
+                                            "Designing and processing images for the company's clients.",
+                                            "Designing brand identity and printed materials.",
+                                            "Capturing product photographs and creating videos for product platforms.",
+                                            "Producing, shooting, and editing videos."]}/>
+                                    <Job time='8/2023 - 1/2024' place='Atseeds Agency' title='freelancer Ui/Ux Designer'
+                                        description={[
+                                            "Designing the UI/UX for the website.",
+                                            "Designing interfaces and user experiences for mobile applications such as Pomodoro App, Podcast App, and others.",
+                                            "Collaborating and coordinating with the development team to propose solutions and address issues during the application design process.",
+                                            "Designing and processing images for social media."]}/>
+                                    <Job time='5/2022 - Hiện Tại' place='' title='freelancer 2D Graphic'
+                                        description={[
+                                            "Designing UI/UX for both websites and apps.",
+                                            "Designing brand identity systems.",
+                                            "Designing and processing images for social media."]}/>
                                 </div>
                                 <div className='flex items-end'>
                                     <a className='group cursor-pointer capitalize font-normal py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500
@@ -378,6 +364,44 @@ function Body() {
                 </div>
             </div>
         </>
+    )
+}
+
+function Job(props) {
+
+    const [expanse, setExpanse] = useState(false);
+    const description = useRef();
+
+    useEffect(() => {
+
+        var d = description.current.scrollHeight;
+
+        if(expanse) {
+            description.current.style.height = d + 'px';
+        } else {
+            description.current.style.height = '0px';
+        }
+
+    }, [description, expanse]);
+
+    return(
+        <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20 cursor-pointer' onClick={() => setExpanse(!expanse)}>
+            <div className='flex justify-between italic text-lg font-bold'>
+                <p>{props.time}</p>
+                <p>{props.place}</p>
+            </div>
+            <div className='flex justify-between items-center capitalize text-3xl font-bold'>
+                <p>{props.title}</p>
+                <svg className={`transition-all duration-500 ${expanse && '-rotate-45'}`} xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
+                </svg>
+            </div>
+            <ul className='list-disc text-lg pl-5 overflow-hidden transition-all duration-500' ref={description}>
+                {props.description.map((e, index) => (
+                    <li key={index}>{e}</li>
+                ))}
+            </ul>
+        </div>
     )
 }
 
