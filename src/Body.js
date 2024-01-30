@@ -219,17 +219,17 @@ function Body() {
                 </div>
                 
                 {/* Section 2 */}
-                <div className='flex-[0_0_100vw] items-center px-24 py-36 text-white bg-cover transition-all duration-500 hidden' style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
+                <div className='flex-[0_0_100vw] items-center px-6 py-14 text-white bg-cover transition-all duration-500 hidden lg:px-24 lg:py-36' style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
                     <div className='w-full h-full overflow-hidden' onWheel={ScrollTitles}>
                         <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%] transition duration-500' id='scrollItems'>
                         {Object.values(listTitle).map((x, index) => ( 
                             <div key={index} className={`w-full ${item != index && 'opacity-60'}`}>
-                                <div className='group/item w-fit pb-8 border-b-2 border-solid flex gap-11 items-center'>
-                                    <div className='flex items-baseline gap-20'>
-                                        <span className='text-3xl font-normal'>{index + 1}.</span>
-                                        <div className='capitalize text-7xl font-medium'>{x[2]}</div>
+                                <div className='group/item w-fit pb-2 border-b-2 border-solid flex items-center lg:pb-8'>
+                                    <div className='flex items-baseline gap-4 lg:gap-20'>
+                                        <span className='text-xl font-normal lg:text-3xl'>{index + 1}.</span>
+                                        <div className='capitalize text-4xl font-medium lg:text-7xl'>{x[2]}</div>
                                     </div>
-                                    <div className={`overflow-hidden w-0 ${item == index && 'group-hover/item:w-[280px]'} transition-all duration-500 cursor-pointer`}>
+                                    <div className={`overflow-hidden w-0 ${item == index && 'lg:group-hover/item:w-[325px] lg:group-hover/item:pl-11'} transition-all duration-500 cursor-pointer`}>
                                         <div className='group w-[280px] bg-[#F6AB52] flex gap-3.5 items-baseline rounded-[50px] py-4 px-6 text-lg font-bold capitalize' id={index} onClick={() => {setClickItem(index); setChangeSection(3)}}>
                                             <span>Xem tất cả các dự án</span>
                                             <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
@@ -237,6 +237,11 @@ function Body() {
                                                 after:content-[""] after:absolute after:bg-white after:rounded-full after:h-0.5 after:w-3 after:rotate-45 after:-right-px after:bottom-1'></span>
                                         </div>
                                     </div>
+                                    <span className='relative left-3 bg-[#F6AB52] w-10 h-1 rounded-full
+                                                    before:content-[""] before:absolute before:bg-[#F6AB52] before:rounded-full before:h-1 before:w-5 before:-rotate-45 before:-right-px before:-bottom-1
+                                                    after:content-[""] after:absolute after:bg-[#F6AB52] after:rounded-full after:h-1 after:w-5 after:rotate-45 after:-right-px after:bottom-1'>
+                                        
+                                    </span>
                                 </div>
                             </div> 
                         ))}
