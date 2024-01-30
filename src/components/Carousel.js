@@ -75,16 +75,16 @@ function Carousel(props) {
     return(
         <>
             {itemCarousel[props.item].map((x, index) => (
-                <div key={index} className='group flex flex-col gap-6 flex-[0_0_20%]'>
+                <div key={index} className='group flex flex-col gap-6 flex-[0_0_90%] lg:flex-[0_0_20%]'>
                     <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} />
-                    <div className='relative h-44'>
+                    <div className='relative h-32 lg:h-52'>
                         <div className='absolute flex flex-col gap-3'>
                             <div className='flex flex-col text-white/80'>
-                                <p className='uppercase text-3xl font-bold'>{x[1]}</p>
-                                <p className='text-xl font-normal'>{x[2]}</p>
+                                <p className='uppercase text-2xl font-bold lg:text-3xl'>{x[1]}</p>
+                                <p className='text-base font-normal lg:text-xl'>{x[2]}</p>
                             </div>
                             <div className='h-[28px]'>
-                                <div className='flex gap-2 items-center text-[#F6AA50] text-lg font-medium overflow-hidden h-0 group-hover:h-full transition-all duration-500'>
+                                <div className='flex gap-2 items-center text-[#F6AA50] text-base font-medium overflow-hidden h-0 group-hover:h-full transition-all duration-500 lg:text-lg'>
                                     Xem trên Behance
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M4.1665 9.99996H15.8332M15.8332 9.99996L9.99984 4.16663M15.8332 9.99996L9.99984 15.8333" stroke="#F6AA50" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>

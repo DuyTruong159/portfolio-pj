@@ -5,16 +5,22 @@ function SectionItems(props) {
     return(
         <>
             <div className='flex items-center gap-8'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="44" id="sad" viewBox="0 0 54 44" fill="none" 
+                <svg className="lg:hidden" xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18" fill="none"
+                    onMouseEnter={(e) => e.currentTarget.querySelector('path').setAttribute('stroke','#F6AA50')} 
+                    onMouseLeave={(e) => e.currentTarget.querySelector('path').setAttribute('stroke','white')} 
+                    onClick={() => props.back(2)}>
+                    <path d="M9.42105 17L1 9M1 9L9.42105 1M1 9H21.2105" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <svg className="hidden lg:block" xmlns="http://www.w3.org/2000/svg" width="54" height="44" id="sad" viewBox="0 0 54 44" fill="none" 
                     onMouseEnter={(e) => e.currentTarget.querySelector('path').setAttribute('stroke','#F6AA50')} 
                     onMouseLeave={(e) => e.currentTarget.querySelector('path').setAttribute('stroke','white')} 
                     onClick={() => props.back(2)}>
                     <path d="M23 41L3 22M3 22L23 3M3 22H51" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className='capitalize text-7xl font-medium'>{props.name}</span>
+                <span className='capitalize text-3xl font-medium lg:text-7xl'>{props.name}</span>
             </div>
             {props.item != 4 ? (
-                <div className='flex gap-16 overflow-x-scroll' id="scroll">
+                <div className='flex gap-5 overflow-x-scroll lg:gap-16' id="scroll">
                     <Carousel item={props.item}/>
                 </div>
             ) : (
