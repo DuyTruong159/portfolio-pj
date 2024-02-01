@@ -7,16 +7,23 @@
         display: none;
     } */
 
+    @media screen and (min-width: 1024px) {
+        #scroll-y::-webkit-scrollbar {
+            display: block;
+            width: 2px;
+        }
+    }
+
     #scroll::-webkit-scrollbar {
         display: block;
         height: 2px;
     }
 
-    #scroll::-webkit-scrollbar-track {
+    #scroll::-webkit-scrollbar-track, #scroll-y::-webkit-scrollbar-track {
         background: #A8A8A8;
     }
 
-    #scroll::-webkit-scrollbar-thumb {
+    #scroll::-webkit-scrollbar-thumb, #scroll-y::-webkit-scrollbar-thumb {
         background: #F6AA50;
     }
     

@@ -148,7 +148,7 @@ function Body() {
                                         <path d="M6.74536 26.3986L30.9999 2" stroke="white" strokeWidth="4"/>
                                     </g>
                                 </svg>
-                                <div className='fixed left-0 bottom-0 w-full h-full bg-[#082723] flex flex-col justify-center gap-5 capitalize text-white text-3xl font-medium px-6 z-[-1] 
+                                <div className='fixed left-0 bottom-0 w-full h-full bg-[#082723] flex flex-col justify-center gap-5 capitalize text-white text-3xl font-medium px-6 pt-14 z-[-1] 
                                                 lg:gap-10 lg:px-24 lg:text-6xl'>
                                     {menuItem.map((x, index) => (
                                         <div key={index} className='w-fit relative transition-all duration-500 hover:text-[#F6AA50]
@@ -255,18 +255,18 @@ function Body() {
                 </div>     
 
                 {/* Section 4 */}  
-                <div className='flex-[0_0_100vw] pt-24 px-24 text-white hidden' id='section4'>
-                    <div className='h-full overflow-y-scroll flex flex-col gap-28 pb-24'>
-                        <div className='flex items-center gap-36'>
-                            <div className='w-1/4 flex flex-col items-center gap-14'>
-                                {/* <img src={Avatar}/> */}
-                                <div className='flex flex-col items-center gap-4 text-center'>
-                                    <p className='uppercase text-[#FFB147] text-5xl font-bold'>Chiem Van Loc</p>
-                                    <p className='capitalize text-3xl font-bold'>Ui/Ux - Graphic Designer</p>
+                <div className='flex-[0_0_100vw] pt-14 px-6 text-white hidden lg:pt-24 lg:pl-24 lg:pr-12' id='section4'>
+                    <div className='h-full overflow-y-scroll flex flex-col gap-8 pb-14 lg:pb-24 lg:pr-12 lg:gap-28' id='scroll-y'>
+                        <div className='flex flex-col items-center gap-5 lg:flex-row lg:gap-36'>
+                            <div className='flex flex-col items-center gap-6 lg:w-1/4 lg:gap-14'>
+                                <img src={Avatar}/>
+                                <div className='flex flex-col items-center text-center lg:gap-4'>
+                                    <p className='uppercase text-[#FFB147] text-3xl font-bold lg:text-5xl'>Chiem Van Loc</p>
+                                    <p className='capitalize text-xl font-bold lg:text-3xl'>Ui/Ux - Graphic Designer</p>
                                 </div>
                             </div>
-                            <div className='w-3/4 flex flex-col gap-20'>
-                                <div className='flex gap-14 border-b border-white/20 pb-8'>
+                            <div className='flex flex-col gap-8 lg:w-3/4 lg:gap-20'>
+                                <div className='flex flex-col items-center gap-2 border-b border-white/20 pb-5 lg:pb-8 lg:flex-row lg:gap-14 lg:items-start'>
                                     <div className='flex gap-3 items-center'>
                                         <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
@@ -310,44 +310,44 @@ function Body() {
                                         Ho Chi Minh, Viet Nam
                                     </div>
                                 </div>
-                                <div className='flex gap-14'>
-                                    <div className='w-1/2 flex flex-col gap-3'>
-                                        <p className='capitalize italic text-4xl font-bold'>Tóm tắt về mình</p>
-                                        <p className='text-lg font-normal'>Xin chào, mình là Ui/Ux Designer và Graphic Designer, mình đam mê sáng tạo, không ngừng tìm hiểu và phát triển. Với kinh nghiệm tham gia nhiều dự án, mình mang đến giải pháp sáng tạo và tối ưu, đồng thời xem mỗi dự án như cơ hội học hỏi và trải nghiệm mới. Sự đa nhiệm và khả năng làm việc nhóm của mình đã giúp tôi góp phần tích cực vào mỗi dự án, mang lại giá trị đặc biệt qua từng ý tưởng thiết kế.</p>
+                                <div className='flex flex-col gap-8 lg:flex-row lg:gap-14'>
+                                    <div className='flex flex-col gap-3 lg:w-1/2'>
+                                        <p className='capitalize italic text-3xl font-bold lg:text-4xl'>Tóm tắt về mình</p>
+                                        <p className='text-base font-normal lg:text-lg'>Xin chào, mình là Ui/Ux Designer và Graphic Designer, mình đam mê sáng tạo, không ngừng tìm hiểu và phát triển. Với kinh nghiệm tham gia nhiều dự án, mình mang đến giải pháp sáng tạo và tối ưu, đồng thời xem mỗi dự án như cơ hội học hỏi và trải nghiệm mới. Sự đa nhiệm và khả năng làm việc nhóm của mình đã giúp tôi góp phần tích cực vào mỗi dự án, mang lại giá trị đặc biệt qua từng ý tưởng thiết kế.</p>
                                     </div>
-                                    <div className='w-1/2 flex flex-col gap-3'>
-                                        <p className='capitalize italic text-4xl font-bold'><span className='not-italic text-[#FFB147]'>20+</span> dự án đã thực hiện</p>
-                                        <p className='text-lg font-normal'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
+                                    <div className='flex flex-col gap-3 lg:w-1/2'>
+                                        <p className='capitalize italic text-3xl font-bold lg:text-4xl'><span className='not-italic text-[#FFB147]'>20+</span> dự án đã thực hiện</p>
+                                        <p className='text-base font-normal lg:text-lg'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
                                     </div>
                                 </div>
-                                <div className='w-3/5 flex gap-3 bg-[#142C29] px-10 py-6'>
+                                <div className='flex gap-3 px-4 py-3.5 lg:w-3/5 lg:px-10 lg:py-6 lg:bg-[#142C29]'>
                                     <svg className='min-w-16' xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
                                         <path d="M12.2704 46.1894C9.5237 43.272 8.04903 40 8.04904 34.696C8.04904 25.3627 14.601 16.9974 24.129 12.8614L26.5104 16.536C17.617 21.3467 15.8784 27.5894 15.185 31.5254C16.617 30.784 18.4917 30.5254 20.329 30.696C25.1397 31.1414 28.9317 35.0907 28.9317 40C28.9317 42.4754 27.9484 44.8494 26.198 46.5997C24.4477 48.35 22.0737 49.3334 19.5984 49.3334C16.737 49.3334 14.001 48.0267 12.2704 46.1894ZM38.937 46.1894C36.1904 43.272 34.7157 40 34.7157 34.696C34.7157 25.3627 41.2677 16.9974 50.7957 12.8614L53.177 16.536C44.2837 21.3467 42.545 27.5894 41.8517 31.5254C43.2837 30.784 45.1584 30.5254 46.9957 30.696C51.8064 31.1414 55.5957 35.0907 55.5957 40C55.5957 42.4754 54.6124 44.8494 52.862 46.5997C51.1117 48.35 48.7377 49.3334 46.2624 49.3334C43.401 49.3334 40.665 48.0267 38.9344 46.1894L38.937 46.1894Z" fill="#FFB147"/>
                                     </svg>
-                                    <p className='italic text-xl font-semibold'>“Sự hoàn hảo của thiết kế không chỉ nằm trong sự hấp dẫn hình thức mà còn phản ánh ở khả năng làm việc mượt mà và hiệu quả.” <span className='text-[#CACACA]'>- James Dyso</span></p>
+                                    <p className='italic text-lg font-bold lg:text-xl lg:font-semibold'>“Sự hoàn hảo của thiết kế không chỉ nằm trong sự hấp dẫn hình thức mà còn phản ánh ở khả năng làm việc mượt mà và hiệu quả.” <span className='text-[#CACACA]'>- James Dyso</span></p>
                                 </div>
                             </div>
                         </div>
-                        <div className='bg-[#142C29] py-16 px-24 flex gap-28'>
-                            <div className='w-1/3 text-lg'>
-                                <p className='italic font-semibold pb-4'>Chuyên môn</p>
-                                <p className='uppercase text-4xl font-bold pb-6'>chuyên môn - kĩ năng</p>
+                        <div className='bg-[#142C29] py-8 px-6 flex flex-col gap-5 lg:flex-row lg:py-16 lg:px-24 lg:gap-28'>
+                            <div className='text-base lg:w-1/3 lg:text-lg'>
+                                <p className='italic font-semibold pb-1 lg:pb-4'>Chuyên môn</p>
+                                <p className='uppercase text-3xl font-bold pb-3 lg:pb-6 lg:text-4xl'>chuyên môn - kĩ năng</p>
                                 <p className='font-normal'>Với khả năng đa nhiệm độc đáo trong thiết kế, mình không chỉ tập trung vào Ui/Ux và Graphic mà còn tích hợp nhiều kỹ năng khác nhau. Sự kết hợp này giúp mình mang lại những giải pháp sáng tạo và hiệu quả trong mọi dự án.</p>
                             </div>
-                            <div className='w-2/3 grid grid-cols-2 gap-y-8 gap-x-28'>
+                            <div className='grid gap-y-5 gap-x-28 lg:w-2/3 lg:grid-cols-2 lg:gap-y-8'>
                                 {skills.map((x, index) => (
-                                    <p key={index} className='capitalize text-3xl font-bold border-b border-solid border-white/20 pb-5'>{x}</p>
+                                    <p key={index} className='capitalize text-2xl font-bold border-b border-solid border-white/20 pb-2 lg:text-3xl lg:pb-5'>{x}</p>
                                 ))}
                             </div>
                         </div>
-                        <div className='bg-[#142C29] py-16 px-24 flex gap-28'>
-                            <div className='w-1/3 text-lg'>
-                                <p className='italic font-semibold pb-4'>Kinh nghiệm</p>
-                                <p className='uppercase text-4xl font-bold pb-6'>Kinh nghiệm làm việc</p>
+                        <div className='bg-[#142C29] py-8 px-6 flex flex-col gap-8 lg:flex-row lg:py-16 lg:px-24 lg:gap-28'>
+                            <div className='text-base lg:w-1/3 lg:text-lg'>
+                                <p className='italic font-semibold pb-1 lg:pb-4'>Kinh nghiệm</p>
+                                <p className='uppercase text-3xl font-bold pb-3 lg:pb-6 lg:text-4xl'>Kinh nghiệm làm việc</p>
                                 <p className='font-normal'>Mình luôn dành sự quan tâm và tập trung cao vào công việc, không ngừng trau dồi kiến thức và phát triển bản thân. Đối với mình, công việc không chỉ là nhiệm vụ hàng ngày mà còn là cơ hội để không ngừng học hỏi và đặt ra những thách thức mới, nhằm trở thành phiên bản tốt nhất cho chính mình và đồng nghiệp.</p>
                             </div>
-                            <div className='w-2/3 flex justify-between gap-28'>
-                                <div className='w-7/12 flex flex-col gap-8'>
+                            <div className='flex flex-col justify-between gap-8 lg:w-2/3 lg:flex-row lg:gap-28'>
+                                <div className='flex flex-col gap-8 lg:w-7/12'>
                                     <Job time='9/2022 - 1/2024' place='Tech-One.io Agency' title='Graphic Designer'
                                         description={[
                                             "Designing the interface and researching user experience on the website and dashboard.",
@@ -370,7 +370,7 @@ function Body() {
                                             "Designing and processing images for social media."]}/>
                                 </div>
                                 <div className='flex items-end'>
-                                    <a className='group cursor-pointer capitalize font-normal py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500
+                                    <a className='group cursor-pointer capitalize font-normal text-base py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500 lg:text-lg
                                         hover:to-[#F6AA50] hover:shadow-[#F6AA50] hover:font-bold' onClick={() => setChangeSection(5)}>
                                         Liên hệ công việc ở đây
                                         <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
@@ -384,41 +384,49 @@ function Body() {
                 </div>
 
                 {/* Section 5 */}
-                <div className='flex gap-24 flex-[0_0_100vw] items-center text-white px-24 pt-24 pb-6 hidden' id='section5'>
-                    <div className='w-2/5 flex flex-col'>
-                        <p className='capitalize italic text-lg font-semibold pb-4'>Kết nối</p>
-                        <p className='capitalize text-5xl font-bold pb-44'>Liên hệ mình</p>
-                        <a href='tel:+84703788949' className='text-3xl font-bold pb-5'>(+84) 703 788 949</a>
-                        <a href='mailto:chiemloc020203@gmail.com' className='text-3xl font-bold pb-20'>chiemloc020203@gmail.com</a>
-                        <div className='flex gap-6 uppercase text-lg font-medium'>
-                            {socials.map((e, index) => (
-                                <a key={index} href={e[1]} target='_blank'>{e[0]}</a>
-                            ))}
+                <div className='flex justify-between flex-[0_0_100vw] text-white px-6 pt-24 pb-6 overflow-y-hidden hidden lg:px-24' id='section5'>
+                    <div className='w-full flex flex-col gap-14 justify-between overflow-y-scroll lg:gap-24 lg:flex-row lg:items-center lg:overflow-y-hidden'>
+                        <div className='h-full flex gap-5 flex-col lg:justify-between lg:w-2/5'>
+                            <div className='flex flex-col gap-2 lg:gap-4'>
+                                <p className='capitalize italic text-base font-semibold lg:text-lg'>Kết nối</p>
+                                <p className='capitalize text-3xl font-bold lg:text-5xl'>Liên hệ mình</p>
+                            </div>
+                            <div className='flex flex-col gap-5 lg:gap-20'>
+                                <div className='flex flex-col gap-1 lg:gap-5'>
+                                    <a href='tel:+84703788949' className='text-lg font-bold lg:text-3xl'>(+84) 703 788 949</a>
+                                    <a href='mailto:chiemloc020203@gmail.com' className='text-lg font-bold lg:text-3xl'>chiemloc020203@gmail.com</a>
+                                </div>
+                                <div className='flex flex-wrap gap-4 uppercase text-sm font-medium lg:text-lg lg:gap-6'>
+                                    {socials.map((e, index) => (
+                                        <a key={index} href={e[1]} target='_blank'>{e[0]}</a>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <form className='w-3/5 bg-[#142C29] flex flex-col items-start p-20 gap-14'>
-                        <p className='capitalize text-4xl font-bold'>Vấn đề của bạn là gì?</p>
-                        <div className='w-full flex gap-12'>
-                            <div className='w-1/2 flex flex-col'>
-                                <label className='uppercase text-lg font-medium text-white/80'>Tên</label>
+                        <form className='bg-[#142C29] flex flex-col items-start px-5 py-7 gap-8 lg:gap-14 lg:w-3/5 lg:p-20'>
+                            <p className='capitalize text-3xl font-bold lg:text-4xl'>Vấn đề của bạn là gì?</p>
+                            <div className='w-full flex flex-col gap-8 lg:gap-12 lg:flex-row'>
+                                <div className='flex flex-col text-base lg:text-lg lg:w-1/2'>
+                                    <label className='uppercase font-medium text-white/80'>Tên</label>
+                                    <input type='text' className='bg-transparent outline-0 border-b border-solid' />
+                                </div>
+                                <div className='flex flex-col text-base lg:text-lg lg:w-1/2'>
+                                    <label className='uppercase font-medium text-white/80'>email</label>
+                                    <input type='email' className='bg-transparent outline-0 border-b border-solid' />
+                                </div>
+                            </div>
+                            <div className='w-full flex text-base lg:text-lg flex-col'>
+                                <label className='uppercase font-medium text-white/80'>Nội dung</label>
                                 <input type='text' className='bg-transparent outline-0 border-b border-solid' />
                             </div>
-                            <div className='w-1/2 flex flex-col'>
-                                <label className='uppercase text-lg font-medium text-white/80'>email</label>
-                                <input type='email' className='bg-transparent outline-0 border-b border-solid' />
-                            </div>
-                        </div>
-                        <div className='w-full flex flex-col'>
-                            <label className='uppercase text-lg font-medium text-white/80'>Nội dung</label>
-                            <input type='text' className='bg-transparent outline-0 border-b border-solid' />
-                        </div>
-                        <span className='group cursor-pointer capitalize font-normal py-4 px-6 rounded-[50px] bg-[#F6AB52] transition-all duration-500 hover:font-bold'>
-                            Gửi Ngay!
-                            <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
-                                before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
-                                after:content-[""] after:absolute after:bg-white after:rounded-full after:h-0.5 after:w-3 after:rotate-45 after:-right-px after:bottom-1'></span>
-                        </span>
-                    </form>
+                            <span className='group cursor-pointer capitalize font-normal text-base py-4 px-6 rounded-[50px] bg-[#F6AB52] transition-all duration-500 lg:text-lg hover:font-bold'>
+                                Gửi Ngay!
+                                <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
+                                    before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
+                                    after:content-[""] after:absolute after:bg-white after:rounded-full after:h-0.5 after:w-3 after:rotate-45 after:-right-px after:bottom-1'></span>
+                            </span>
+                        </form>
+                    </div>
                 </div>
             </div> 
         </>
@@ -435,7 +443,7 @@ function Job(props) {
         var d = description.current.scrollHeight;
 
         if(expanse) {
-            description.current.style.height = d + 'px';
+            description.current.style.height = d + 15 + 'px';
         } else {
             description.current.style.height = '0px';
         }
@@ -443,18 +451,18 @@ function Job(props) {
     }, [description, expanse]);
 
     return(
-        <div className='flex flex-col gap-3 pb-5 border-b border-solid border-white/20 cursor-pointer' onClick={() => setExpanse(!expanse)}>
-            <div className='flex justify-between italic text-lg font-bold'>
+        <div className='flex flex-col gap-3 border-b border-solid border-white/20 cursor-pointer lg:pb-5' onClick={() => setExpanse(!expanse)}>
+            <div className='flex justify-between italic text-base font-medium lg:text-lg lg:font-bold'>
                 <p>{props.time}</p>
                 <p>{props.place}</p>
             </div>
-            <div className='flex justify-between items-center capitalize text-3xl font-bold'>
+            <div className='flex justify-between items-center capitalize text-2xl font-bold lg:text-3xl'>
                 <p>{props.title}</p>
-                <svg className={`transition-all duration-500 ${expanse && '-rotate-45'}`} xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M19.7257 6.94943L17.9155 8.75963L23.8801 14.7242H2.89993L2.89993 17.2766L23.8801 17.2766L17.9155 23.2412L19.7257 25.0514L28.7766 16.0004L19.7257 6.94943Z" fill="white"/>
+                <svg className={`transition-all duration-500 ${expanse && 'rotate-45'}`} xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M11.9996 6.40039V8.96039H20.4348L5.59961 23.7956L7.40441 25.6004L22.2396 10.7652V19.2004H24.7996V6.40039H11.9996Z" fill="white"/>
                 </svg>
             </div>
-            <ul className='list-disc text-lg pl-5 overflow-hidden transition-all duration-500' ref={description}>
+            <ul className='list-disc text-base pl-5 overflow-hidden transition-all duration-500 lg:text-lg' ref={description}>
                 {props.description.map((e, index) => (
                     <li key={index}>{e}</li>
                 ))}

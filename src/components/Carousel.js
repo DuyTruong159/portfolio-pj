@@ -75,7 +75,7 @@ function Carousel(props) {
     return(
         <>
             {itemCarousel[props.item].map((x, index) => (
-                <div key={index} className='group flex flex-col gap-6 flex-[0_0_90%] lg:flex-[0_0_20%]'>
+                <div key={index} className='group flex flex-col gap-6 flex-[0_0_90%] snap-center snap-always lg:flex-[0_0_20%]'>
                     <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} />
                     <div className='relative h-32 lg:h-52'>
                         <div className='absolute flex flex-col gap-3'>

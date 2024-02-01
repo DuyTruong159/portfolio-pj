@@ -20,7 +20,7 @@ function SectionItems(props) {
                 <span className='capitalize text-3xl font-medium lg:text-7xl'>{props.name}</span>
             </div>
             {props.item != 4 ? (
-                <div className='flex gap-5 overflow-x-scroll lg:gap-16' id="scroll">
+                <div className='flex gap-5 snap-x snap-mandatory overflow-x-scroll lg:gap-16' id="scroll">
                     <Carousel item={props.item}/>
                 </div>
             ) : (
