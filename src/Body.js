@@ -259,7 +259,7 @@ function Body() {
                     <div className='h-full overflow-y-scroll flex flex-col gap-8 pb-14 lg:pb-24 lg:pr-12 lg:gap-28' id='scroll-y'>
                         <div className='flex flex-col items-center gap-5 lg:flex-row lg:gap-36'>
                             <div className='flex flex-col items-center gap-6 lg:w-1/4 lg:gap-14'>
-                                <img src={Avatar}/>
+                                <img loading="lazy" src={Avatar}/>
                                 <div className='flex flex-col items-center text-center lg:gap-4'>
                                     <p className='uppercase text-[#FFB147] text-3xl font-bold lg:text-5xl'>Chiem Van Loc</p>
                                     <p className='capitalize text-xl font-bold lg:text-3xl'>Ui/Ux - Graphic Designer</p>
