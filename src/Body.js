@@ -149,12 +149,13 @@ function Body() {
                                     </g>
                                 </svg>
                                 <div className='fixed left-0 bottom-0 w-full h-full bg-[#082723] flex flex-col justify-center gap-5 capitalize text-white text-3xl font-medium px-6 pt-14 z-[-1] 
-                                                lg:gap-10 lg:px-24 lg:text-6xl'>
+                                                lg:gap-10 lg:px-24 lg:text-4xl 2xl:text-6xl'>
                                     {menuItem.map((x, index) => (
                                         <div key={index} className='w-fit relative transition-all duration-500 hover:text-[#F6AA50]
                                             after:content-[""] after:absolute after:left-0 after:-bottom-3 after:w-0 after:border-0 after:border-solid after:border-[#F6AA50] after:transition-all after:duration-500
                                             after:hover:w-full after:hover:border cursor-pointer' onClick={() => setChangeSection(x[1])}>{x[0]}</div>
                                     ))}
+                                    <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a className='underline text-[#F6AA50]'>Behance</a></div>
                                 </div>
                             </>
                         ) : (
@@ -190,20 +191,20 @@ function Body() {
                             <path d="M96.5998 17.0335L72.6114 31.4265L73.044 5.04098L73.0856 2.5H70.5443H46.7468H44.2263L44.2469 5.02049L44.4635 31.4487L20.4381 17.0335L18.2711 15.7332L16.9944 17.9143L4.84246 38.6738L3.54573 40.889L5.79443 42.1268L29.3772 55.1081L5.80994 67.8647L3.53653 69.0953L4.84246 71.3262L16.9944 92.0857L18.2711 94.2668L20.4381 92.9665L44.4635 78.5513L44.2469 104.98L44.2263 107.5H46.7468H70.5443H73.086L73.044 104.959L72.6114 78.7916L96.6142 92.9751L98.756 94.2407L100.032 92.1052L112.437 71.3457L113.775 69.1065L111.481 67.8647L87.914 55.1081L111.497 42.1268L113.766 40.8778L112.437 38.6543L100.032 17.8948L98.7474 15.7449L96.5998 17.0335Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                         </svg>
                     </div>
-                    <img className='h-full absolute bottom-0 hidden lg:block' src={Becky} alt='Becky'/>
+                    {/* <img className='h-full absolute bottom-0 hidden lg:block' src={Becky} alt='Becky'/> */}
                     <div className='absolute top-0 w-full h-full px-6 pt-16 text-white flex items-end lg:px-24 lg:bottom-0'>
                         <div className='w-full h-full pb-8 flex flex-col gap-4 items-center overflow-y-scroll 
                                         lg:flex-row lg:items-end lg:justify-between lg:items-start lg:overflow-y-hidden'>
                             <div className='w-full flex flex-col gap-3 lg:w-[650px] lg:gap-8'>
-                                <p className='text-4xl font-semibold lg:text-8xl'>Xin chào, <br/>mình là Trường</p>
+                                <p className='text-4xl font-semibold lg:text-6xl 2xl:text-8xl'>Xin chào, <br/>mình là Trường</p>
                                 <div className='flex flex-wrap gap-2.5 lg:gap-5'>
                                     {Object.values(listTitle).map((x, index) => ( 
-                                        <a onClick={() => {setChangeSection(3); setClickItem(index)}} key={index} className='bg-[#F6AA50] rounded-[50px] text-xs font-semibold uppercase px-5 py-2 cursor-pointer lg:text-lg lg:px-10 lg:py-3.5'>{x[2]}</a> 
+                                        <a onClick={() => {setChangeSection(3); setClickItem(index)}} key={index} className='bg-[#F6AA50] rounded-[50px] text-xs font-semibold uppercase px-5 py-2 cursor-pointer lg:text-sm 2xl:text-lg lg:px-10 lg:py-3.5'>{x[2]}</a> 
                                     ))}
                                 </div>
                             </div>
                             <img className='block lg:hidden' src={Becky} alt='Becky'/>
-                            <div className='flex flex-col items-start gap-4 text-base font-normal lg:w-[500px] lg:gap-12 lg:text-lg lg:font-semibold lg:items-end'>
+                            <div className='flex flex-col items-start gap-4 text-base font-normal lg:w-[500px] lg:gap-12 2xl:text-lg lg:font-semibold lg:items-end'>
                                 <p>Là một người sáng tạo đa nhiệm, trên con đường trở thành UI/UX Designer và 2D Graphics Designer thực thụ, đem đến cho dự án của mình sự độc đáo và chất lượng. Mình không chỉ đơn thuần là người thiết kế, mà còn là người nhiệt huyết, luôn tìm kiếm cơ hội để làm mới bản thân trong ngành.</p>
                                 <a className='group cursor-pointer capitalize font-normal py-3 px-5 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500
                                     hover:to-[#F6AA50] hover:shadow-[#F6AA50] hover:font-bold lg:py-4 lg:px-6'
@@ -227,7 +228,7 @@ function Body() {
                                 <div className='group/item w-fit pb-2 border-b-2 border-solid flex items-center lg:pb-8'>
                                     <div className='flex items-baseline gap-4 lg:gap-20'>
                                         <span className='text-xl font-normal lg:text-3xl'>{index + 1}.</span>
-                                        <div className='capitalize text-4xl font-medium lg:text-7xl'>{x[2]}</div>
+                                        <div className='capitalize text-4xl font-medium lg:text-6xl 2xl:text-7xl'>{x[2]}</div>
                                     </div>
                                     <div className={`overflow-hidden w-0 ${item == index && 'lg:group-hover/item:w-[325px] lg:group-hover/item:pl-11'} transition-all duration-500 cursor-pointer`}>
                                         <div className='group w-[280px] bg-[#F6AB52] flex gap-3.5 items-baseline rounded-[50px] py-4 px-6 text-lg font-bold capitalize' id={index}>
@@ -247,27 +248,29 @@ function Body() {
                         ))}
                         </div>
                     </div>
+                    <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal hidden lg:block lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a className='underline text-[#F6AA50]'>Behance</a></div>
                 </div>
                 
                 {/* Section 3 */}
-                <div className='flex-col gap-8 flex-[0_0_100vw] justify-center px-6 pt-14 text-white bg-cover hidden lg:px-24 lg:pt-24' style={clickItem == 4 ? { backgroundImage: `url(${backgroundImage})` } : {}} id='section3'>
+                <div className='flex-col gap-8 flex-[0_0_100vw] justify-center px-6 pt-14 text-white bg-cover hidden lg:px-24' style={clickItem == 4 ? { backgroundImage: `url(${backgroundImage})` } : {}} id='section3'>
                     <SectionItems name={listTitle[clickItem][2]} back={(e) => {setChangeSection(e)}} item={clickItem}/>
+                    <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal hidden lg:block lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a className='underline text-[#F6AA50]'>Behance</a></div>
                 </div>     
 
                 {/* Section 4 */}  
                 <div className='flex-[0_0_100vw] pt-14 px-6 text-white hidden lg:pt-24 lg:pl-24 lg:pr-12' id='section4'>
                     <div className='h-full overflow-y-scroll flex flex-col gap-8 pb-14 lg:pb-24 lg:pr-12 lg:gap-28' id='scroll-y'>
-                        <div className='flex flex-col items-center gap-5 lg:flex-row lg:gap-36'>
-                            <div className='flex flex-col items-center gap-6 lg:w-1/4 lg:gap-14'>
+                        <div className='flex flex-col items-center gap-5 lg:gap-14 2xl:gap-36 lg:flex-row '>
+                            <div className='flex flex-col items-center gap-6 lg:w-1/3 lg:gap-14'>
                                 <img loading="lazy" src={Avatar}/>
                                 <div className='flex flex-col items-center text-center lg:gap-4'>
                                     <p className='uppercase text-[#FFB147] text-3xl font-bold lg:text-5xl'>Chiem Van Loc</p>
                                     <p className='capitalize text-xl font-bold lg:text-3xl'>Ui/Ux - Graphic Designer</p>
                                 </div>
                             </div>
-                            <div className='flex flex-col gap-8 lg:w-3/4 lg:gap-20'>
+                            <div className='flex flex-col gap-8 lg:w-2/3 lg:gap-20'>
                                 <div className='flex flex-col items-center gap-2 border-b border-white/20 pb-5 lg:pb-8 lg:flex-row lg:gap-14 lg:items-start'>
-                                    <div className='flex gap-3 items-center'>
+                                    <div className='flex gap-3 items-center text-base 2xl:text-lg'>
                                         <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
                                             <g clipPath="url(#clip0_165_737)">
@@ -281,7 +284,7 @@ function Body() {
                                         </svg>
                                         0933-348-018
                                     </div>
-                                    <div className='flex gap-3 items-center'>
+                                    <div className='flex gap-3 items-center text-base 2xl:text-lg'>
                                         <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
                                             <g clipPath="url(#clip0_165_749)">
@@ -295,7 +298,7 @@ function Body() {
                                         </svg>
                                         chiemloc020203@gmail.com
                                     </div>
-                                    <div className='flex gap-3 items-center'>
+                                    <div className='flex gap-3 items-center text-base 2xl:text-lg'>
                                         <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
                                             <g clipPath="url(#clip0_165_755)">
@@ -312,12 +315,12 @@ function Body() {
                                 </div>
                                 <div className='flex flex-col gap-8 lg:flex-row lg:gap-14'>
                                     <div className='flex flex-col gap-3 lg:w-1/2'>
-                                        <p className='capitalize italic text-3xl font-bold lg:text-4xl'>Tóm tắt về mình</p>
-                                        <p className='text-base font-normal lg:text-lg'>Xin chào, mình là Ui/Ux Designer và Graphic Designer, mình đam mê sáng tạo, không ngừng tìm hiểu và phát triển. Với kinh nghiệm tham gia nhiều dự án, mình mang đến giải pháp sáng tạo và tối ưu, đồng thời xem mỗi dự án như cơ hội học hỏi và trải nghiệm mới. Sự đa nhiệm và khả năng làm việc nhóm của mình đã giúp tôi góp phần tích cực vào mỗi dự án, mang lại giá trị đặc biệt qua từng ý tưởng thiết kế.</p>
+                                        <p className='capitalize italic text-3xl font-bold 2xl:text-4xl'>Tóm tắt về mình</p>
+                                        <p className='text-base font-normal 2xl:text-lg'>Xin chào, mình là Ui/Ux Designer và Graphic Designer, mình đam mê sáng tạo, không ngừng tìm hiểu và phát triển. Với kinh nghiệm tham gia nhiều dự án, mình mang đến giải pháp sáng tạo và tối ưu, đồng thời xem mỗi dự án như cơ hội học hỏi và trải nghiệm mới. Sự đa nhiệm và khả năng làm việc nhóm của mình đã giúp tôi góp phần tích cực vào mỗi dự án, mang lại giá trị đặc biệt qua từng ý tưởng thiết kế.</p>
                                     </div>
                                     <div className='flex flex-col gap-3 lg:w-1/2'>
-                                        <p className='capitalize italic text-3xl font-bold lg:text-4xl'><span className='not-italic text-[#FFB147]'>20+</span> dự án đã thực hiện</p>
-                                        <p className='text-base font-normal lg:text-lg'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
+                                        <p className='capitalize italic text-3xl font-bold 2xl:text-4xl'><span className='not-italic text-[#FFB147]'>20+</span> dự án đã thực hiện</p>
+                                        <p className='text-base font-normal 2xl:text-lg'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
                                     </div>
                                 </div>
                                 <div className='flex gap-3 px-4 py-3.5 lg:w-3/5 lg:px-10 lg:py-6 lg:bg-[#142C29]'>

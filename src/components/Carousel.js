@@ -77,11 +77,11 @@ function Carousel(props) {
             {itemCarousel[props.item].map((x, index) => (
                 <div key={index} className='group flex flex-col gap-6 flex-[0_0_90%] snap-center snap-always lg:flex-[0_0_20%]'>
                     <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} />
-                    <div className='relative h-32 lg:h-52'>
+                    <div className='relative h-32 lg:h-[140px]'>
                         <div className='absolute flex flex-col gap-3'>
                             <div className='flex flex-col text-white/80'>
-                                <p className='uppercase text-2xl font-bold lg:text-3xl'>{x[1]}</p>
-                                <p className='text-base font-normal lg:text-xl'>{x[2]}</p>
+                                <p className='uppercase text-2xl font-bold 2xl:text-3xl'>{x[1]}</p>
+                                <p className='text-base font-normal lg:text-lg 2xl:text-xl'>{x[2]}</p>
                             </div>
                             <div className='h-[28px]'>
                                 <div className='flex gap-2 items-center text-[#F6AA50] text-base font-medium overflow-hidden h-0 group-hover:h-full transition-all duration-500 lg:text-lg'>

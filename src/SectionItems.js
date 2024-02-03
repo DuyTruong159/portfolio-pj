@@ -17,7 +17,7 @@ function SectionItems(props) {
                     onClick={() => props.back(2)}>
                     <path d="M23 41L3 22M3 22L23 3M3 22H51" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className='capitalize text-3xl font-medium lg:text-7xl'>{props.name}</span>
+                <span className='capitalize text-3xl font-medium lg:text-6xl 2xl:text-7xl'>{props.name}</span>
             </div>
             {props.item != 4 ? (
                 <div className='flex gap-5 snap-x snap-mandatory overflow-x-scroll lg:gap-16' id="scroll">
