@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 import Avatar from './assets/avatar.png';
 import Becky from './assets/becky.png';
@@ -61,6 +62,21 @@ function Body() {
                 }
             }
         }
+    }
+
+    const Submit = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm("service_wpqf4ci", "template_joybvlo", "#form", "-qgeR4-gRFHRUkK10")
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+
+        document.querySelector('#form input[name="from_name"]').value = "";
+        document.querySelector('#form input[name="from_email"]').value = " ";
+        document.querySelector('#form textarea[name="message"]').value = " ";
     }
 
     useEffect(() => {
@@ -259,7 +275,7 @@ function Body() {
 
                 {/* Section 4 */}  
                 <div className='flex-[0_0_100vw] pt-14 px-6 text-white hidden lg:pt-24 lg:pl-24 lg:pr-12' id='section4'>
-                    <div className='h-full overflow-y-scroll flex flex-col gap-8 pb-14 lg:pb-24 lg:pr-12 lg:gap-28' id='scroll-y'>
+                    <div className='h-full overflow-y-scroll flex flex-col gap-8 pb-14 lg:pb-24 lg:pr-12 lg:gap-20 2xl:gap-28' id='scroll-y'>
                         <div className='flex flex-col items-center gap-5 lg:gap-14 2xl:gap-36 lg:flex-row '>
                             <div className='flex flex-col items-center gap-6 lg:w-1/3 lg:gap-14'>
                                 <img loading="lazy" src={Avatar}/>
@@ -323,33 +339,33 @@ function Body() {
                                         <p className='text-base font-normal 2xl:text-lg'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
                                     </div>
                                 </div>
-                                <div className='flex gap-3 px-4 py-3.5 lg:w-3/5 lg:px-10 lg:py-6 lg:bg-[#142C29]'>
+                                <div className='flex gap-3 px-4 py-3.5 lg:w-3/4 2xl:w-3/5 lg:px-10 lg:py-6 lg:bg-[#142C29]'>
                                     <svg className='min-w-16' xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
                                         <path d="M12.2704 46.1894C9.5237 43.272 8.04903 40 8.04904 34.696C8.04904 25.3627 14.601 16.9974 24.129 12.8614L26.5104 16.536C17.617 21.3467 15.8784 27.5894 15.185 31.5254C16.617 30.784 18.4917 30.5254 20.329 30.696C25.1397 31.1414 28.9317 35.0907 28.9317 40C28.9317 42.4754 27.9484 44.8494 26.198 46.5997C24.4477 48.35 22.0737 49.3334 19.5984 49.3334C16.737 49.3334 14.001 48.0267 12.2704 46.1894ZM38.937 46.1894C36.1904 43.272 34.7157 40 34.7157 34.696C34.7157 25.3627 41.2677 16.9974 50.7957 12.8614L53.177 16.536C44.2837 21.3467 42.545 27.5894 41.8517 31.5254C43.2837 30.784 45.1584 30.5254 46.9957 30.696C51.8064 31.1414 55.5957 35.0907 55.5957 40C55.5957 42.4754 54.6124 44.8494 52.862 46.5997C51.1117 48.35 48.7377 49.3334 46.2624 49.3334C43.401 49.3334 40.665 48.0267 38.9344 46.1894L38.937 46.1894Z" fill="#FFB147"/>
                                     </svg>
-                                    <p className='italic text-lg font-bold lg:text-xl lg:font-semibold'>“Sự hoàn hảo của thiết kế không chỉ nằm trong sự hấp dẫn hình thức mà còn phản ánh ở khả năng làm việc mượt mà và hiệu quả.” <span className='text-[#CACACA]'>- James Dyso</span></p>
+                                    <p className='italic text-lg font-bold 2xl:text-xl lg:font-semibold'>“Sự hoàn hảo của thiết kế không chỉ nằm trong sự hấp dẫn hình thức mà còn phản ánh ở khả năng làm việc mượt mà và hiệu quả.” <span className='text-[#CACACA]'>- James Dyso</span></p>
                                 </div>
                             </div>
                         </div>
-                        <div className='bg-[#142C29] py-8 px-6 flex flex-col gap-5 lg:flex-row lg:py-16 lg:px-24 lg:gap-28'>
-                            <div className='text-base lg:w-1/3 lg:text-lg'>
-                                <p className='italic font-semibold pb-1 lg:pb-4'>Chuyên môn</p>
-                                <p className='uppercase text-3xl font-bold pb-3 lg:pb-6 lg:text-4xl'>chuyên môn - kĩ năng</p>
+                        <div className='bg-[#142C29] py-8 px-6 flex flex-col gap-5 lg:flex-row lg:py-16 2xl:px-24 lg:gap-24 2xl:gap-28'>
+                            <div className='text-base lg:w-1/3 2xl:text-lg'>
+                                <p className='italic font-semibold pb-1 2xl:pb-4'>Chuyên môn</p>
+                                <p className='uppercase text-3xl font-bold pb-3 lg:pb-6 2xl:text-4xl'>chuyên môn - kĩ năng</p>
                                 <p className='font-normal'>Với khả năng đa nhiệm độc đáo trong thiết kế, mình không chỉ tập trung vào Ui/Ux và Graphic mà còn tích hợp nhiều kỹ năng khác nhau. Sự kết hợp này giúp mình mang lại những giải pháp sáng tạo và hiệu quả trong mọi dự án.</p>
                             </div>
-                            <div className='grid gap-y-5 gap-x-28 lg:w-2/3 lg:grid-cols-2 lg:gap-y-8'>
+                            <div className='grid gap-y-5 gap-x-14 lg:w-2/3 lg:grid-cols-2 lg:gap-y-8'>
                                 {skills.map((x, index) => (
-                                    <p key={index} className='capitalize text-2xl font-bold border-b border-solid border-white/20 pb-2 lg:text-3xl lg:pb-5'>{x}</p>
+                                    <p key={index} className='capitalize text-2xl font-bold border-b border-solid border-white/20 pb-2 2xl:text-3xl lg:pb-5'>{x}</p>
                                 ))}
                             </div>
                         </div>
-                        <div className='bg-[#142C29] py-8 px-6 flex flex-col gap-8 lg:flex-row lg:py-16 lg:px-24 lg:gap-28'>
-                            <div className='text-base lg:w-1/3 lg:text-lg'>
-                                <p className='italic font-semibold pb-1 lg:pb-4'>Kinh nghiệm</p>
-                                <p className='uppercase text-3xl font-bold pb-3 lg:pb-6 lg:text-4xl'>Kinh nghiệm làm việc</p>
+                        <div className='bg-[#142C29] py-8 px-6 flex flex-col gap-9 lg:flex-row lg:py-16 2xl:px-24 2xl:gap-28'>
+                            <div className='text-base lg:w-1/3 2xl:text-lg'>
+                                <p className='italic font-semibold pb-1 2xl:pb-4'>Kinh nghiệm</p>
+                                <p className='uppercase text-3xl font-bold pb-3 lg:pb-6 2xl:text-4xl'>Kinh nghiệm làm việc</p>
                                 <p className='font-normal'>Mình luôn dành sự quan tâm và tập trung cao vào công việc, không ngừng trau dồi kiến thức và phát triển bản thân. Đối với mình, công việc không chỉ là nhiệm vụ hàng ngày mà còn là cơ hội để không ngừng học hỏi và đặt ra những thách thức mới, nhằm trở thành phiên bản tốt nhất cho chính mình và đồng nghiệp.</p>
                             </div>
-                            <div className='flex flex-col justify-between gap-8 lg:w-2/3 lg:flex-row lg:gap-28'>
+                            <div className='flex flex-col justify-between gap-9 lg:w-2/3 lg:flex-row 2xl:gap-28'>
                                 <div className='flex flex-col gap-8 lg:w-7/12'>
                                     <Job time='9/2022 - 1/2024' place='Tech-One.io Agency' title='Graphic Designer'
                                         description={[
@@ -373,7 +389,7 @@ function Body() {
                                             "Designing and processing images for social media."]}/>
                                 </div>
                                 <div className='flex items-end'>
-                                    <a className='group cursor-pointer capitalize font-normal text-base py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500 lg:text-lg
+                                    <a className='group cursor-pointer capitalize font-normal text-base py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500 2xl:text-lg
                                         hover:to-[#F6AA50] hover:shadow-[#F6AA50] hover:font-bold' onClick={() => setChangeSection(5)}>
                                         Liên hệ công việc ở đây
                                         <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
@@ -388,7 +404,7 @@ function Body() {
 
                 {/* Section 5 */}
                 <div className='flex justify-between flex-[0_0_100vw] text-white px-6 pt-24 pb-6 overflow-y-hidden hidden lg:px-24' id='section5'>
-                    <div className='w-full flex flex-col gap-14 justify-between overflow-y-scroll lg:gap-24 lg:flex-row lg:items-center lg:overflow-y-hidden'>
+                    <div className='w-full flex flex-col gap-14 justify-between overflow-y-scroll lg:gap-24 lg:flex-row lg:items-stretch lg:overflow-y-hidden'>
                         <div className='h-full flex gap-5 flex-col lg:justify-between lg:w-2/5'>
                             <div className='flex flex-col gap-2 lg:gap-4'>
                                 <p className='capitalize italic text-base font-semibold lg:text-lg'>Kết nối</p>
@@ -406,23 +422,23 @@ function Body() {
                                 </div>
                             </div>
                         </div>
-                        <form className='bg-[#142C29] flex flex-col items-start px-5 py-7 gap-8 lg:gap-14 lg:w-3/5 lg:p-20'>
+                        <form className='bg-[#142C29] flex flex-col justify-center items-start px-5 py-7 gap-8 2xl:gap-14 lg:w-3/5 lg:px-10 lg:py-20 2xl:p-20' id='form'>
                             <p className='capitalize text-3xl font-bold lg:text-4xl'>Vấn đề của bạn là gì?</p>
                             <div className='w-full flex flex-col gap-8 lg:gap-12 lg:flex-row'>
                                 <div className='flex flex-col text-base lg:text-lg lg:w-1/2'>
                                     <label className='uppercase font-medium text-white/80'>Tên</label>
-                                    <input type='text' className='bg-transparent outline-0 border-b border-solid' />
+                                    <input name="from_name" type='text' className='bg-transparent outline-0 border-b border-solid' />
                                 </div>
                                 <div className='flex flex-col text-base lg:text-lg lg:w-1/2'>
                                     <label className='uppercase font-medium text-white/80'>email</label>
-                                    <input type='email' className='bg-transparent outline-0 border-b border-solid' />
+                                    <input name="from_email" type='email' className='bg-transparent outline-0 border-b border-solid' />
                                 </div>
                             </div>
                             <div className='w-full flex text-base lg:text-lg flex-col'>
                                 <label className='uppercase font-medium text-white/80'>Nội dung</label>
-                                <input type='text' className='bg-transparent outline-0 border-b border-solid' />
+                                <textarea name="message" rows="5" className='bg-transparent outline-0 border border-solid rounded-lg'></textarea>
                             </div>
-                            <span className='group cursor-pointer capitalize font-normal text-base py-4 px-6 rounded-[50px] bg-[#F6AB52] transition-all duration-500 lg:text-lg hover:font-bold'>
+                            <span onClick={Submit} className='group cursor-pointer capitalize font-normal text-base py-4 px-6 rounded-[50px] bg-[#F6AB52] transition-all duration-500 lg:text-lg hover:font-bold'>
                                 Gửi Ngay!
                                 <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
                                     before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
@@ -455,17 +471,17 @@ function Job(props) {
 
     return(
         <div className='flex flex-col gap-3 border-b border-solid border-white/20 cursor-pointer lg:pb-5' onClick={() => setExpanse(!expanse)}>
-            <div className='flex justify-between italic text-base font-medium lg:text-lg lg:font-bold'>
+            <div className='flex justify-between italic text-base font-medium 2xl:text-lg 2xl:font-bold'>
                 <p>{props.time}</p>
                 <p>{props.place}</p>
             </div>
-            <div className='flex justify-between items-center capitalize text-2xl font-bold lg:text-3xl'>
+            <div className='flex justify-between items-center capitalize text-2xl font-bold 2xl:text-3xl'>
                 <p>{props.title}</p>
                 <svg className={`transition-all duration-500 ${expanse && 'rotate-45'}`} xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path d="M11.9996 6.40039V8.96039H20.4348L5.59961 23.7956L7.40441 25.6004L22.2396 10.7652V19.2004H24.7996V6.40039H11.9996Z" fill="white"/>
                 </svg>
             </div>
-            <ul className='list-disc text-base pl-5 overflow-hidden transition-all duration-500 lg:text-lg' ref={description}>
+            <ul className='list-disc text-base pl-5 overflow-hidden transition-all duration-500 2xl:text-lg' ref={description}>
                 {props.description.map((e, index) => (
                     <li key={index}>{e}</li>
                 ))}
