@@ -189,10 +189,10 @@ function Body() {
                 </div>
             </div>
 
-            <div className='h-screen flex overflow-x-hidden' id='main'>
+            <div className='h-screen flex overflow-hidden' id='main'>
                 {/* Section 1 */}
-                <div className='flex flex-[0_0_100vw] justify-center items-center relative px-6 py-14 lg:px-36' id='section1'>
-                    <div className="flex flex-col items-center fixed px-6 lg:relative lg:px-0">
+                <div className='h-full flex flex-[0_0_100vw] justify-center items-center relative px-6 py-14 overflow-y-hidden lg:px-36' id='section1'>
+                    <div className="h-full flex flex-col items-center fixed px-6 lg:relative lg:px-0">
                         <svg className="w-full" xmlns="http://www.w3.org/2000/svg" width="1618" height="390" viewBox="0 0 1618 390" fill="none">
                             <path d="M227.695 160.65C227.695 185.96 222.388 208.258 211.774 227.542C201.161 246.827 185.723 261.893 165.46 272.74C145.439 283.347 121.559 288.65 93.8187 288.65H3V33.3729H93.8187C121.559 33.3729 145.439 38.6761 165.46 49.2825C185.723 59.6478 201.161 74.4727 211.774 93.7571C222.388 112.8 227.695 135.098 227.695 160.65ZM89.4767 243.09C116.976 243.09 138.203 235.859 153.158 221.395C168.355 206.932 175.953 186.684 175.953 160.65C175.953 134.375 168.355 114.006 153.158 99.5424C138.203 85.0791 116.976 77.8475 89.4767 77.8475H54.0177V243.09H89.4767Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                             <path d="M454.402 180.898C454.402 185.96 453.799 191.746 452.593 198.254H305.691C306.415 216.092 311.239 229.23 320.164 237.667C329.089 246.104 340.185 250.322 353.452 250.322C365.272 250.322 375.041 247.429 382.76 241.644C390.721 235.859 395.786 228.024 397.957 218.141H451.869C449.216 232.122 443.547 244.657 434.864 255.746C426.18 266.834 414.963 275.512 401.214 281.78C387.705 288.047 372.629 291.181 355.985 291.181C336.446 291.181 319.079 287.083 303.882 278.887C288.685 270.45 276.866 258.518 268.423 243.09C259.98 227.663 255.759 209.463 255.759 188.492C255.759 167.52 259.98 149.32 268.423 133.893C276.866 118.224 288.685 106.292 303.882 98.096C319.079 89.9002 336.446 85.8022 355.985 85.8022C375.765 85.8022 393.012 89.9002 407.726 98.096C422.682 106.292 434.14 117.621 442.1 132.085C450.301 146.307 454.402 162.578 454.402 180.898ZM403.023 175.836C403.746 159.444 399.404 147.03 389.997 138.593C380.831 130.156 369.493 125.938 355.985 125.938C342.236 125.938 330.657 130.156 321.25 138.593C311.842 147.03 306.656 159.444 305.691 175.836H403.023Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
@@ -207,7 +207,7 @@ function Body() {
                             <path d="M96.5998 17.0335L72.6114 31.4265L73.044 5.04098L73.0856 2.5H70.5443H46.7468H44.2263L44.2469 5.02049L44.4635 31.4487L20.4381 17.0335L18.2711 15.7332L16.9944 17.9143L4.84246 38.6738L3.54573 40.889L5.79443 42.1268L29.3772 55.1081L5.80994 67.8647L3.53653 69.0953L4.84246 71.3262L16.9944 92.0857L18.2711 94.2668L20.4381 92.9665L44.4635 78.5513L44.2469 104.98L44.2263 107.5H46.7468H70.5443H73.086L73.044 104.959L72.6114 78.7916L96.6142 92.9751L98.756 94.2407L100.032 92.1052L112.437 71.3457L113.775 69.1065L111.481 67.8647L87.914 55.1081L111.497 42.1268L113.766 40.8778L112.437 38.6543L100.032 17.8948L98.7474 15.7449L96.5998 17.0335Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                         </svg>
                     </div>
-                    {/* <img className='h-full absolute bottom-0 hidden lg:block' src={Becky} alt='Becky'/> */}
+                    <img className='h-full absolute bottom-0 hidden lg:block' src={Becky} alt='Becky'/>
                     <div className='absolute top-0 w-full h-full px-6 pt-16 text-white flex items-end lg:px-24 lg:bottom-0'>
                         <div className='w-full h-full pb-8 flex flex-col gap-4 items-center overflow-y-scroll 
                                         lg:flex-row lg:items-end lg:justify-between lg:items-start lg:overflow-y-hidden'>
@@ -268,7 +268,7 @@ function Body() {
                 </div>
                 
                 {/* Section 3 */}
-                <div className='flex-col gap-8 flex-[0_0_100vw] justify-center px-6 pt-14 text-white bg-cover hidden lg:px-24' style={clickItem == 4 ? { backgroundImage: `url(${backgroundImage})` } : {}} id='section3'>
+                <div className='flex-col gap-8 flex-[0_0_100vw] justify-center px-6 pt-14 text-white bg-cover hidden lg:py-20 lg:px-24' id='section3'>
                     <SectionItems name={listTitle[clickItem][2]} back={(e) => {setChangeSection(e)}} item={clickItem}/>
                     <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal hidden lg:block lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a className='underline text-[#F6AA50]'>Behance</a></div>
                 </div>     

@@ -1,4 +1,5 @@
 import Carousel from "./components/Carousel"
+import Film from './assets/2duatre.png';
 
 function SectionItems(props) {
 
@@ -24,9 +25,10 @@ function SectionItems(props) {
                     <Carousel item={props.item}/>
                 </div>
             ) : (
-                <div className="h-1/2 flex justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <g clip-path="url(#clip0_312_5555)">
+                <div className="relative h-4/5 m-auto border-4 border-solid border-white lg:w-3/5">
+                    <img src={Film} className="h-full w-full object-cover"/>
+                    <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <g clipPath="url(#clip0_312_5555)">
                             <rect width="80" height="80" rx="40" fill="#F6AA50"/>
                             <path d="M26.666 16.6665V63.3332L63.3327 39.9998L26.666 16.6665Z" fill="white"/>
                         </g>
