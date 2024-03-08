@@ -50,7 +50,7 @@ function SectionItems(props) {
                     <Carousel item={props.item}/>
                 </div>
             ) : (
-                <div className="relative h-4/5 m-auto border-4 border-solid border-white lg:w-3/5">
+                <div className="relative h-4/5 m-auto border-4 border-solid border-white lg:w-3/5 cursor-pointer" onClick={() => window.open('https://www.behance.net/VanLoc-Designer', '_blank')}>
                     <img src={Film} className="h-full w-full object-cover"/>
                     <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
                         <g clipPath="url(#clip0_312_5555)">

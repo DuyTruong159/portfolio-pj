@@ -236,11 +236,13 @@ function Body() {
                 </div>
                 
                 {/* Section 2 */}
-                <div className='flex-[0_0_100vw] items-center px-6 py-14 text-white bg-cover bg-center transition-all duration-500 hidden lg:px-24 lg:py-36' style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
+                <div className='relative flex-[0_0_100vw] items-center px-6 py-14 text-white bg-cover bg-center transition-all duration-500 hidden lg:px-24 lg:py-36
+                                before:content-[""] before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-gradient-to-r before:from-[#082723] before:from-40% before:to-transparent before:to-100%' 
+                    style={{backgroundImage: `url(${backgroundImage})`}} id='section2'>
                     <div className='w-full h-full overflow-hidden' onWheel={ScrollTitles}>
                         <div className='flex flex-col items-start gap-28 relative top-1/2 -translate-y-[5%] transition duration-500' id='scrollItems'>
                         {Object.values(listTitle).map((x, index) => ( 
-                            <div key={index} className={`w-full cursor-pointer ${item != index && 'opacity-60'}`} onClick={() => {if(item === index){setClickItem(index);setChangeSection(3);}}}>
+                            <div key={index} className={`w-full cursor-pointer ${item != index && 'opacity-60'}`} onClick={() => {if(item === index && item !== 4){setClickItem(index);setChangeSection(3);}else{window.open('https://www.behance.net/VanLoc-Designer', '_blank')}}}>
                                 <div className='group/item w-fit pb-2 border-b-2 border-solid flex items-center lg:pb-8'>
                                     <div className='flex items-baseline gap-4 lg:gap-20'>
                                         <span className='text-xl font-normal lg:text-3xl'>{index + 1}.</span>
