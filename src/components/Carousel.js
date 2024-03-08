@@ -36,39 +36,39 @@ function Carousel(props) {
 
     const itemCarousel = [
         [
-            [ItemUIUX1, 'staarlabs', 'E-Commerce website'],
-            [ItemUIUX2, 'Ươm app', 'Ứng dụng hộ trợ chăm sóc cây trồng'],
-            [ItemUIUX3, 'Bandy Constructor', 'Business Website'],
-            [ItemUIUX4, 'Pomodoro app', 'Ứng dụng quản lý thời gian'],
-            [ItemUIUX5, 'luật thắng lợi', 'Business Website'],
-            [ItemUIUX6, 'Dragonship App', 'Ứng dụng vận chuyển cho doanh nghiệp'],
-            [ItemUIUX7, 'Affiliate Tool', 'Công cụ quản lý đơn hàng Affiliate'],
-            [ItemUIUX8, 'all landing pages', 'Business Website'],
-            [ItemUIUX9, 'Meditation App', 'Ứng dụng chữa lành tâm hồn']
+            [ItemUIUX1, 'staarlabs', 'E-Commerce website', ''],
+            [ItemUIUX2, 'Ươm app', 'Ứng dụng hộ trợ chăm sóc cây trồng', ''],
+            [ItemUIUX3, 'Bandy Constructor', 'Business Website', ''],
+            [ItemUIUX4, 'Pomodoro app', 'Ứng dụng quản lý thời gian', ''],
+            [ItemUIUX5, 'luật thắng lợi', 'Business Website', ''],
+            [ItemUIUX6, 'Dragonship App', 'Ứng dụng vận chuyển cho doanh nghiệp', ''],
+            [ItemUIUX7, 'Affiliate Tool', 'Công cụ quản lý đơn hàng Affiliate', ''],
+            [ItemUIUX8, 'all landing pages', 'Business Website', ''],
+            [ItemUIUX9, 'Meditation App', 'Ứng dụng chữa lành tâm hồn', '']
         ], [
-            [ItemBranding1, 'INHERE', 'branding identity'],
-            [ItemBranding2, 'aPao', 'branding identity'],
-            [ItemBranding3, 'Vchosi', 'branding identity'],
-            [ItemBranding4, 'Mơ Bistro', 'branding identity'],
-            [ItemBranding5, '20Q Reminder', 'branding identity'],
-            [ItemBranding6, 'Nghĩa Ân - Bò Khô', 'branding identity'],
-            [ItemBranding7, 'Clara - Vải lụa tơ sen', 'branding identity'],
-            [ItemBranding8, 'Sblazer', 'branding identity']
+            [ItemBranding1, 'INHERE', 'branding identity', ''],
+            [ItemBranding2, 'aPao', 'branding identity', ''],
+            [ItemBranding3, 'Vchosi', 'branding identity', ''],
+            [ItemBranding4, 'Mơ Bistro', 'branding identity', ''],
+            [ItemBranding5, '20Q Reminder', 'branding identity', ''],
+            [ItemBranding6, 'Nghĩa Ân - Bò Khô', 'branding identity', ''],
+            [ItemBranding7, 'Clara - Vải lụa tơ sen', 'branding identity', ''],
+            [ItemBranding8, 'Sblazer', 'branding identity', '']
         ], [
-            [ItemSocialPost1, 'Coffee Day', 'Social image'],
-            [ItemSocialPost2, 'Chuyện ngày xuân', 'Social image'],
-            [ItemSocialPost3, 'lotus Fabric', 'Social image'],
-            [ItemSocialPost4, 'Skin Detective app', 'Social image'],
-            [ItemSocialPost5, 'GetGo App', 'Social image'],
-            [ItemSocialPost6, 'CocoNala', 'Social image'],
-            [ItemSocialPost7, 'Combo Smokio cassper', 'Social image'],
-            [ItemSocialPost8, 'Combo Saffron', 'Social image'],
-            [ItemSocialPost9, 'Vnfs', 'Social image']
+            [ItemSocialPost1, 'Coffee Day', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost2, 'Chuyện ngày xuân', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost3, 'lotus Fabric', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost4, 'Skin Detective app', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost5, 'GetGo App', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost6, 'CocoNala', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost7, 'Combo Smokio cassper', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost8, 'Combo Saffron', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemSocialPost9, 'Vnfs', 'Social image', 'https://www.behance.net/VanLoc-Designer']
         ], [
-            [ItemPhotography1, 'tạp chí môi trường', 'Photography'],
-            [ItemPhotography2, 'tạp chí môi trường', 'Photography'],
-            [ItemPhotography3, 'Trà hoa việt - Hương sen', 'Photography'],
-            [ItemPhotography4, 'INHERE - SAFFRON', 'Photography']
+            [ItemPhotography1, 'tạp chí môi trường', 'Photography', ''],
+            [ItemPhotography2, 'tạp chí môi trường', 'Photography', ''],
+            [ItemPhotography3, 'Trà hoa việt - Hương sen', 'Photography', ''],
+            [ItemPhotography4, 'INHERE - SAFFRON', 'Photography', '']
         ]
     ];
 
@@ -76,15 +76,16 @@ function Carousel(props) {
         <>
             {itemCarousel[props.item].map((x, index) => (
                 <div key={index} className='group flex flex-col gap-6 flex-[0_0_90%] snap-center snap-always lg:flex-[0_0_20%]'>
-                    <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} />
-                    <div className='relative h-32 lg:h-[140px]'>
+                    <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} onClick={() => window.open(x[3], '_blank')}/>
+                    <div className='relative h-32 lg:h-[155px]'>
                         <div className='absolute flex flex-col gap-3'>
                             <div className='flex flex-col text-white/80'>
                                 <p className='uppercase text-2xl font-bold 2xl:text-3xl'>{x[1]}</p>
                                 <p className='text-base font-normal lg:text-lg 2xl:text-xl'>{x[2]}</p>
                             </div>
                             <div className='h-[28px]'>
-                                <div className='flex gap-2 items-center text-[#F6AA50] text-base font-medium overflow-hidden h-0 group-hover:h-full transition-all duration-500 lg:text-lg'>
+                                <div className='flex gap-2 items-center text-[#F6AA50] text-base font-medium overflow-hidden h-0 group-hover:h-full transition-all duration-500 lg:text-lg'
+                                        onClick={() => window.open(x[3], '_blank')}>
                                     Xem trên Behance
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                         <path d="M4.1665 9.99996H15.8332M15.8332 9.99996L9.99984 4.16663M15.8332 9.99996L9.99984 15.8333" stroke="#F6AA50" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>

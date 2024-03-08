@@ -1,7 +1,31 @@
 import Carousel from "./components/Carousel"
 import Film from './assets/2duatre.png';
+import React, { useState } from 'react';
 
 function SectionItems(props) {
+
+    const [mouseDown, setMouseDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const sliderRef = React.useRef(null);
+
+    const startDragging = (e) => {
+        setMouseDown(true);
+        setStartX(e.pageX - sliderRef.current.offsetLeft);
+        setScrollLeft(sliderRef.current.scrollLeft);
+    };
+
+    const stopDragging = () => {
+        setMouseDown(false);
+    };
+
+    const move = (e) => {
+        e.preventDefault();
+        if (!mouseDown) return;
+        const x = e.pageX - sliderRef.current.offsetLeft;
+        const scroll = x - startX;
+        sliderRef.current.scrollLeft = scrollLeft - scroll;
+    };
 
     return(
         <>
@@ -18,10 +42,11 @@ function SectionItems(props) {
                     onClick={() => props.back(2)}>
                     <path d="M23 41L3 22M3 22L23 3M3 22H51" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className='capitalize text-3xl font-medium lg:text-6xl 2xl:text-7xl'>{props.name}</span>
+                <span className='capitalize text-3xl font-medium lg:text-[50px] 2xl:text-7xl'>{props.name}</span>
             </div>
             {props.item != 4 ? (
-                <div className='flex gap-5 snap-x snap-mandatory overflow-x-scroll lg:gap-16' id="scroll">
+                <div className='flex gap-5 overflow-x-scroll overflow-y-hidden lg:gap-16 cursor-pointer' id="scroll"
+                    ref={sliderRef} onMouseMove={move} onMouseDown={startDragging} onMouseUp={stopDragging} onMouseLeave={stopDragging}>
                     <Carousel item={props.item}/>
                 </div>
             ) : (

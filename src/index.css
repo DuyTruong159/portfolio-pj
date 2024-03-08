@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+    @font-face {
+        font-family: 'UTM-Yen-Tu';
+        src: url(./assets/UTM-Yen-Tu.ttf);
+    }
+
     /* ::-webkit-scrollbar {
         display: none;
     } */
@@ -10,7 +15,7 @@
     @media screen and (min-width: 1024px) {
         #scroll-y::-webkit-scrollbar {
             display: block;
-            width: 2px;
+            width: 3px;
         }
     }
 

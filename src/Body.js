@@ -114,7 +114,7 @@ function Body() {
             {/* Header */}
             <div className='cursor-default fixed flex justify-between items-center w-full px-6 py-5 z-10 lg:px-24 lg:py-8'>
                 <div onClick={() => setChangeSection(1)} className="font-['Poppins'] font-bold text-lg text-white cursor-pointer lg:text-3xl">
-                    DuyTruong
+                    VanLoc
                     <span className="text-[#F1875E]">.</span>
                 </div>
                 <div className="flex items-center gap-4 lg:gap-8">
@@ -192,7 +192,7 @@ function Body() {
             <div className='h-screen flex overflow-hidden' id='main'>
                 {/* Section 1 */}
                 <div className='h-full flex flex-[0_0_100vw] justify-center items-center relative px-6 py-14 overflow-y-hidden lg:px-36' id='section1'>
-                    <div className="h-full flex flex-col items-center fixed px-6 lg:relative lg:px-0">
+                    <div className="h-full flex flex-col items-center justify-center fixed px-6 lg:relative lg:px-0">
                         <svg className="w-full" xmlns="http://www.w3.org/2000/svg" width="1618" height="390" viewBox="0 0 1618 390" fill="none">
                             <path d="M227.695 160.65C227.695 185.96 222.388 208.258 211.774 227.542C201.161 246.827 185.723 261.893 165.46 272.74C145.439 283.347 121.559 288.65 93.8187 288.65H3V33.3729H93.8187C121.559 33.3729 145.439 38.6761 165.46 49.2825C185.723 59.6478 201.161 74.4727 211.774 93.7571C222.388 112.8 227.695 135.098 227.695 160.65ZM89.4767 243.09C116.976 243.09 138.203 235.859 153.158 221.395C168.355 206.932 175.953 186.684 175.953 160.65C175.953 134.375 168.355 114.006 153.158 99.5424C138.203 85.0791 116.976 77.8475 89.4767 77.8475H54.0177V243.09H89.4767Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                             <path d="M454.402 180.898C454.402 185.96 453.799 191.746 452.593 198.254H305.691C306.415 216.092 311.239 229.23 320.164 237.667C329.089 246.104 340.185 250.322 353.452 250.322C365.272 250.322 375.041 247.429 382.76 241.644C390.721 235.859 395.786 228.024 397.957 218.141H451.869C449.216 232.122 443.547 244.657 434.864 255.746C426.18 266.834 414.963 275.512 401.214 281.78C387.705 288.047 372.629 291.181 355.985 291.181C336.446 291.181 319.079 287.083 303.882 278.887C288.685 270.45 276.866 258.518 268.423 243.09C259.98 227.663 255.759 209.463 255.759 188.492C255.759 167.52 259.98 149.32 268.423 133.893C276.866 118.224 288.685 106.292 303.882 98.096C319.079 89.9002 336.446 85.8022 355.985 85.8022C375.765 85.8022 393.012 89.9002 407.726 98.096C422.682 106.292 434.14 117.621 442.1 132.085C450.301 146.307 454.402 162.578 454.402 180.898ZM403.023 175.836C403.746 159.444 399.404 147.03 389.997 138.593C380.831 130.156 369.493 125.938 355.985 125.938C342.236 125.938 330.657 130.156 321.25 138.593C311.842 147.03 306.656 159.444 305.691 175.836H403.023Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
@@ -203,11 +203,11 @@ function Body() {
                             <path d="M1456.85 180.898C1456.85 185.96 1456.24 191.746 1455.04 198.254H1308.14C1308.86 216.092 1313.68 229.23 1322.61 237.667C1331.53 246.104 1342.63 250.322 1355.9 250.322C1367.72 250.322 1377.49 247.429 1385.21 241.644C1393.17 235.859 1398.23 228.024 1400.4 218.141H1454.31C1451.66 232.122 1445.99 244.657 1437.31 255.746C1428.63 266.834 1417.41 275.512 1403.66 281.78C1390.15 288.047 1375.07 291.181 1358.43 291.181C1338.89 291.181 1321.52 287.083 1306.33 278.887C1291.13 270.45 1279.31 258.518 1270.87 243.09C1262.43 227.663 1258.2 209.463 1258.2 188.492C1258.2 167.52 1262.43 149.32 1270.87 133.893C1279.31 118.224 1291.13 106.292 1306.33 98.096C1321.52 89.9002 1338.89 85.8022 1358.43 85.8022C1378.21 85.8022 1395.46 89.9002 1410.17 98.096C1425.13 106.292 1436.59 117.621 1444.55 132.085C1452.75 146.307 1456.85 162.578 1456.85 180.898ZM1405.47 175.836C1406.19 159.444 1401.85 147.03 1392.44 138.593C1383.28 130.156 1371.94 125.938 1358.43 125.938C1344.68 125.938 1333.1 130.156 1323.7 138.593C1314.29 147.03 1309.1 159.444 1308.14 175.836H1405.47Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                             <path d="M1544.08 126.661C1551.56 113.885 1561.45 103.881 1573.75 96.6497C1586.05 89.177 1599.8 85.4407 1615 85.4407V140.04H1600.17C1562.78 140.04 1544.08 157.395 1544.08 192.107V288.65H1493.06V88.3333H1544.08V126.661Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                         </svg>
-                        <svg className="w-1/6 absolute right-[10%] bottom-0 lg:-bottom-1/4" xmlns="http://www.w3.org/2000/svg" width="118" height="110" viewBox="0 0 118 110" fill="none">
+                        <svg className="w-1/6 absolute right-[10%] bottom-0 lg:bottom-[20%]" xmlns="http://www.w3.org/2000/svg" width="118" height="110" viewBox="0 0 118 110" fill="none">
                             <path d="M96.5998 17.0335L72.6114 31.4265L73.044 5.04098L73.0856 2.5H70.5443H46.7468H44.2263L44.2469 5.02049L44.4635 31.4487L20.4381 17.0335L18.2711 15.7332L16.9944 17.9143L4.84246 38.6738L3.54573 40.889L5.79443 42.1268L29.3772 55.1081L5.80994 67.8647L3.53653 69.0953L4.84246 71.3262L16.9944 92.0857L18.2711 94.2668L20.4381 92.9665L44.4635 78.5513L44.2469 104.98L44.2263 107.5H46.7468H70.5443H73.086L73.044 104.959L72.6114 78.7916L96.6142 92.9751L98.756 94.2407L100.032 92.1052L112.437 71.3457L113.775 69.1065L111.481 67.8647L87.914 55.1081L111.497 42.1268L113.766 40.8778L112.437 38.6543L100.032 17.8948L98.7474 15.7449L96.5998 17.0335Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                         </svg>
                     </div>
-                    <img className='h-full absolute bottom-0 hidden lg:block' src={Becky} alt='Becky'/>
+                    <img className='h-[95%] absolute bottom-0 hidden lg:block' src={Becky} alt='Becky'/>
                     <div className='absolute top-0 w-full h-full px-6 pt-16 text-white flex items-end lg:px-24 lg:bottom-0'>
                         <div className='w-full h-full pb-8 flex flex-col gap-4 items-center overflow-y-scroll 
                                         lg:flex-row lg:items-end lg:justify-between lg:items-start lg:overflow-y-hidden'>
@@ -264,13 +264,13 @@ function Body() {
                         ))}
                         </div>
                     </div>
-                    <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal hidden lg:block lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a className='underline text-[#F6AA50]'>Behance</a></div>
+                    <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal hidden lg:block lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a href='https://www.behance.net/VanLoc-Designer' target='_blank' className='underline text-[#F6AA50]'>Behance</a></div>
                 </div>
                 
                 {/* Section 3 */}
                 <div className='flex-col gap-8 flex-[0_0_100vw] justify-center px-6 pt-14 text-white bg-cover hidden lg:py-20 lg:px-24' id='section3'>
                     <SectionItems name={listTitle[clickItem][2]} back={(e) => {setChangeSection(e)}} item={clickItem}/>
-                    <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal hidden lg:block lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a className='underline text-[#F6AA50]'>Behance</a></div>
+                    <div className='absolute bottom-0 pb-8 pr-6 capitalize text-base font-normal hidden lg:block lg:right-0 lg:px-24'>Tất cả dự án mới nhất sẽ được cập nhật tại <a href='https://www.behance.net/VanLoc-Designer' target='_blank' className='underline text-[#F6AA50]'>Behance</a></div>
                 </div>     
 
                 {/* Section 4 */}  
@@ -279,13 +279,14 @@ function Body() {
                         <div className='flex flex-col items-center gap-5 lg:gap-14 2xl:gap-36 lg:flex-row '>
                             <div className='flex flex-col items-center gap-6 lg:w-1/3 lg:gap-14'>
                                 <img loading="lazy" src={Avatar}/>
-                                <div className='flex flex-col items-center text-center lg:gap-4'>
+                                <div className='relative flex flex-col items-center text-center lg:gap-4'>
+                                    <p className="absolute font-['UTM-Yen-Tu'] text-5xl left-0 -top-20 -rotate-6">Loc Chiem</p>
                                     <p className='uppercase text-[#FFB147] text-3xl font-bold lg:text-5xl'>Chiem Van Loc</p>
                                     <p className='capitalize text-xl font-bold lg:text-3xl'>Ui/Ux - Graphic Designer</p>
                                 </div>
                             </div>
                             <div className='flex flex-col gap-8 lg:w-2/3 lg:gap-20'>
-                                <div className='flex flex-col items-center gap-2 border-b border-white/20 pb-5 lg:pb-8 lg:flex-row lg:gap-14 lg:items-start'>
+                                <div className='flex flex-col justify-between items-center gap-2 border-b border-white/20 pb-5 lg:pb-8 lg:flex-row lg:gap-14 lg:items-start'>
                                     <div className='flex gap-3 items-center text-base 2xl:text-lg'>
                                         <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="20.0488" cy="20" r="20" fill="white" fillOpacity="0.05"/>
@@ -339,7 +340,7 @@ function Body() {
                                         <p className='text-base font-normal 2xl:text-lg'>Với hơn 20 dự án đã thực hiện. Bao gồm ấn phẩm, branding, đến thiết kế Ui/Ux như: website, dashboard và mobile app, tôi đã có cơ hội chứng minh khả năng đa dạng và sáng tạo trong nhiều lĩnh vực thiết kế. Từ đó đáp ứng được nhu cầu của từng khách hàng, mang lại giá trị và lợi ích mà họ mong muốn.</p>
                                     </div>
                                 </div>
-                                <div className='flex gap-3 px-4 py-3.5 lg:w-3/4 2xl:w-3/5 lg:px-10 lg:py-6 lg:bg-[#142C29]'>
+                                <div className='flex gap-3 px-4 py-3.5 lg:w-4/5 2xl:w-3/5 lg:px-10 lg:py-6 lg:bg-[#142C29]'>
                                     <svg className='min-w-16' xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
                                         <path d="M12.2704 46.1894C9.5237 43.272 8.04903 40 8.04904 34.696C8.04904 25.3627 14.601 16.9974 24.129 12.8614L26.5104 16.536C17.617 21.3467 15.8784 27.5894 15.185 31.5254C16.617 30.784 18.4917 30.5254 20.329 30.696C25.1397 31.1414 28.9317 35.0907 28.9317 40C28.9317 42.4754 27.9484 44.8494 26.198 46.5997C24.4477 48.35 22.0737 49.3334 19.5984 49.3334C16.737 49.3334 14.001 48.0267 12.2704 46.1894ZM38.937 46.1894C36.1904 43.272 34.7157 40 34.7157 34.696C34.7157 25.3627 41.2677 16.9974 50.7957 12.8614L53.177 16.536C44.2837 21.3467 42.545 27.5894 41.8517 31.5254C43.2837 30.784 45.1584 30.5254 46.9957 30.696C51.8064 31.1414 55.5957 35.0907 55.5957 40C55.5957 42.4754 54.6124 44.8494 52.862 46.5997C51.1117 48.35 48.7377 49.3334 46.2624 49.3334C43.401 49.3334 40.665 48.0267 38.9344 46.1894L38.937 46.1894Z" fill="#FFB147"/>
                                     </svg>
@@ -439,7 +440,7 @@ function Body() {
                                 <textarea name="message" rows="5" className='bg-transparent outline-0 border border-solid rounded-lg'></textarea>
                             </div>
                             <span onClick={Submit} className='group cursor-pointer capitalize font-normal text-base py-4 px-6 rounded-[50px] bg-[#F6AB52] transition-all duration-500 lg:text-lg hover:font-bold'>
-                                Gửi Ngay!
+                                Gửi Ngay
                                 <span className='relative inline-block h-0.5 w-6 bg-white rounded-full ml-2 bottom-1 transition-all duration-500 group-hover:w-7
                                     before:content-[""] before:absolute before:bg-white before:rounded-full before:h-0.5 before:w-3 before:-rotate-45 before:-right-px before:-bottom-1
                                     after:content-[""] after:absolute after:bg-white after:rounded-full after:h-0.5 after:w-3 after:rotate-45 after:-right-px after:bottom-1'></span>
