@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-pj/static/css/main.24374324.css",
-    "main.js": "/portfolio-pj/static/js/main.f9ec1485.js",
+    "main.css": "/portfolio-pj/static/css/main.fb041470.css",
+    "main.js": "/portfolio-pj/static/js/main.783099d5.js",
     "static/js/787.27df7537.chunk.js": "/portfolio-pj/static/js/787.27df7537.chunk.js",
     "static/media/bg-socialpost.png": "/portfolio-pj/static/media/bg-socialpost.755ee01f9b6d474edfa3.png",
     "static/media/bg-uiux.png": "/portfolio-pj/static/media/bg-uiux.ffd5759d7aadcf85a153.png",
@@ -9,7 +9,7 @@
     "static/media/bg-film.png": "/portfolio-pj/static/media/bg-film.f39e4a514354e02245ff.png",
     "static/media/bg-branding.png": "/portfolio-pj/static/media/bg-branding.f16d71dd23498db763a0.png",
     "static/media/2duatre.png": "/portfolio-pj/static/media/2duatre.6d5288d2b76aa56f276b.png",
-    "static/media/becky.png": "/portfolio-pj/static/media/becky.98c84bdb2836d1d279e3.png",
+    "static/media/loc.png": "/portfolio-pj/static/media/loc.c89b8a64338256fc0a8e.png",
     "static/media/item-branding-4.jpg": "/portfolio-pj/static/media/item-branding-4.50f89080b83206a04e23.jpg",
     "static/media/item-photography-3.jpg": "/portfolio-pj/static/media/item-photography-3.03a54509d04cba3226cd.jpg",
     "static/media/item-socialpost-8.jpg": "/portfolio-pj/static/media/item-socialpost-8.220f8e5c8e21c3e7c873.jpg",
@@ -43,12 +43,12 @@
     "static/media/item-socialpost-6.jpg": "/portfolio-pj/static/media/item-socialpost-6.d915ac71553643ce545e.jpg",
     "static/media/item-uiux-7.jpg": "/portfolio-pj/static/media/item-uiux-7.ec574e7d97c2b4f4a8c3.jpg",
     "index.html": "/portfolio-pj/index.html",
-    "main.24374324.css.map": "/portfolio-pj/static/css/main.24374324.css.map",
-    "main.f9ec1485.js.map": "/portfolio-pj/static/js/main.f9ec1485.js.map",
+    "main.fb041470.css.map": "/portfolio-pj/static/css/main.fb041470.css.map",
+    "main.783099d5.js.map": "/portfolio-pj/static/js/main.783099d5.js.map",
     "787.27df7537.chunk.js.map": "/portfolio-pj/static/js/787.27df7537.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.24374324.css",
-    "static/js/main.f9ec1485.js"
+    "static/css/main.fb041470.css",
+    "static/js/main.783099d5.js"
   ]
 }
