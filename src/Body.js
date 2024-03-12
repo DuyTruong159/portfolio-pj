@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 import Avatar from './assets/avatar.png';
-import Becky from './assets/becky.png';
+import Loc from './assets/loc.png';
 import UiUx from './assets/bg-uiux.png';
 import Branding from './assets/bg-branding.png';
 import Socialpost from './assets/bg-socialpost.png';
@@ -207,7 +207,7 @@ function Body() {
                             <path d="M96.5998 17.0335L72.6114 31.4265L73.044 5.04098L73.0856 2.5H70.5443H46.7468H44.2263L44.2469 5.02049L44.4635 31.4487L20.4381 17.0335L18.2711 15.7332L16.9944 17.9143L4.84246 38.6738L3.54573 40.889L5.79443 42.1268L29.3772 55.1081L5.80994 67.8647L3.53653 69.0953L4.84246 71.3262L16.9944 92.0857L18.2711 94.2668L20.4381 92.9665L44.4635 78.5513L44.2469 104.98L44.2263 107.5H46.7468H70.5443H73.086L73.044 104.959L72.6114 78.7916L96.6142 92.9751L98.756 94.2407L100.032 92.1052L112.437 71.3457L113.775 69.1065L111.481 67.8647L87.914 55.1081L111.497 42.1268L113.766 40.8778L112.437 38.6543L100.032 17.8948L98.7474 15.7449L96.5998 17.0335Z" stroke="white" strokeOpacity="0.05" strokeWidth="5"/>
                         </svg>
                     </div>
-                    <img className='h-[95%] absolute bottom-0 hidden lg:block' src={Becky} alt='Becky'/>
+                    <img className='h-[95%] absolute bottom-0 hidden lg:block' src={Loc} alt='Loc'/>
                     <div className='absolute top-0 w-full h-full px-6 pt-16 text-white flex items-end lg:px-24 lg:bottom-0'>
                         <div className='w-full h-full pb-8 flex flex-col gap-4 items-center overflow-y-scroll 
                                         lg:flex-row lg:items-end lg:justify-between lg:items-start lg:overflow-y-hidden'>
@@ -219,8 +219,8 @@ function Body() {
                                     ))}
                                 </div>
                             </div>
-                            <img className='block lg:hidden' src={Becky} alt='Becky'/>
-                            <div className='flex flex-col items-start gap-4 text-base font-normal lg:w-[500px] lg:gap-12 2xl:text-lg lg:font-semibold lg:items-end'>
+                            <img className='block lg:hidden' src={Loc} alt='Loc'/>
+                            <div className='flex flex-col items-start gap-4 text-base font-normal lg:w-[430px] lg:gap-12 2xl:text-lg lg:font-semibold lg:items-end'>
                                 <p>Là một người sáng tạo đa nhiệm, trên con đường trở thành UI/UX Designer và 2D Graphics Designer thực thụ, đem đến cho dự án của mình sự độc đáo và chất lượng. Mình không chỉ đơn thuần là người thiết kế, mà còn là người nhiệt huyết, luôn tìm kiếm cơ hội để làm mới bản thân trong ngành.</p>
                                 <a className='group cursor-pointer capitalize font-normal py-3 px-5 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500
                                     hover:to-[#F6AA50] hover:shadow-[#F6AA50] hover:font-bold lg:py-4 lg:px-6'
@@ -329,7 +329,7 @@ function Body() {
                                                 </clipPath>
                                             </defs>
                                         </svg>
-                                        Ho Chi Minh, Viet Nam
+                                        Hồ Chí Minh, Việt Nam
                                     </div>
                                 </div>
                                 <div className='flex flex-col gap-8 lg:flex-row lg:gap-14'>
@@ -372,24 +372,24 @@ function Body() {
                                 <div className='flex flex-col gap-8 lg:w-7/12'>
                                     <Job time='9/2022 - 1/2024' place='Tech-One.io Agency' title='Graphic Designer'
                                         description={[
-                                            "Designing the interface and researching user experience on the website and dashboard.",
-                                            "Designing various landing pages.",
-                                            "Discussing and collaborating with various teams to propose solutions, address issues, and optimize the internal and customer-facing website.",
-                                            "Designing and processing images for the company's clients.",
-                                            "Designing brand identity and printed materials.",
-                                            "Capturing product photographs and creating videos for product platforms.",
-                                            "Producing, shooting, and editing videos."]}/>
+                                            "Thiết kế giao diện và nghiên cứu trải nghiệm người dùng trên trang web và bảng điều khiển.",
+                                            "Thiết kế các trang đích khác nhau.",
+                                            "Thảo luận và hợp tác với các nhóm khác nhau để đề xuất các giải pháp, giải quyết vấn đề và tối ưu hóa trang web nội bộ và trang web phục vụ khách hàng.",
+                                            "Thiết kế và xử lý hình ảnh cho các khách hàng của công ty.",
+                                            "Thiết kế thương hiệu và các tài liệu in ấn.",
+                                            "Chụp ảnh sản phẩm và tạo video cho các nền tảng sản phẩm.",
+                                            "Sản xuất, quay và chỉnh sửa video."]}/>
                                     <Job time='8/2023 - 1/2024' place='Atseeds Agency' title='freelancer Ui/Ux Designer'
                                         description={[
-                                            "Designing the UI/UX for the website.",
-                                            "Designing interfaces and user experiences for mobile applications such as Pomodoro App, Podcast App, and others.",
-                                            "Collaborating and coordinating with the development team to propose solutions and address issues during the application design process.",
-                                            "Designing and processing images for social media."]}/>
+                                            "Thiết kế giao diện và trải nghiệm người dùng cho trang web.",
+                                            "Thiết kế giao diện và trải nghiệm người dùng cho ứng dụng di động như Ứng dụng Pomodoro, Ứng dụng Podcast và các ứng dụng khác.",
+                                            "Hợp tác và phối hợp với nhóm phát triển để đề xuất các giải pháp và giải quyết các vấn đề trong quá trình thiết kế ứng dụng.",
+                                            "Thiết kế và xử lý hình ảnh cho các trang mạng xã hội."]}/>
                                     <Job time='5/2022 - Hiện Tại' place='' title='freelancer 2D Graphic'
                                         description={[
-                                            "Designing UI/UX for both websites and apps.",
-                                            "Designing brand identity systems.",
-                                            "Designing and processing images for social media."]}/>
+                                            "Thiết kế giao diện và trải nghiệm người dùng cho cả trang web và ứng dụng.",
+                                            "Thiết kế hệ thống nhận diện thương hiệu.",
+                                            "Thiết kế và xử lý hình ảnh cho các mạng xã hội."]}/>
                                 </div>
                                 <div className='flex items-end'>
                                     <a className='group cursor-pointer capitalize font-normal text-base py-4 px-6 border-2 border-solid border-transparent rounded-[50px] bg-gradient-to-r from-[#F6AA50] to-[#FFFFFF] bg-origin-border shadow-[inset_0_100vw_#082723] transition-all duration-500 2xl:text-lg
