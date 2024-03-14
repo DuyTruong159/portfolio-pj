@@ -212,7 +212,7 @@ function Body() {
                         <div className='w-full h-full pb-8 flex flex-col gap-4 items-center overflow-y-scroll 
                                         lg:flex-row lg:items-end lg:justify-between lg:items-start lg:overflow-y-hidden'>
                             <div className='w-full flex flex-col gap-3 lg:w-[650px] lg:gap-8'>
-                                <p className='text-4xl font-semibold lg:text-6xl 2xl:text-8xl'>Xin chào, <br/>mình là Trường</p>
+                                <p className='text-4xl font-semibold lg:text-6xl 2xl:text-8xl'>Xin chào, <br/>mình là Lộc</p>
                                 <div className='flex flex-wrap gap-2.5 lg:gap-5'>
                                     {Object.values(listTitle).map((x, index) => ( 
                                         <a onClick={() => {setChangeSection(3); setClickItem(index)}} key={index} className='bg-[#F6AA50] rounded-[50px] text-xs font-semibold uppercase px-5 py-2 cursor-pointer lg:text-sm 2xl:text-lg lg:px-10 lg:py-3.5'>{x[2]}</a> 

@@ -36,24 +36,24 @@ function Carousel(props) {
 
     const itemCarousel = [
         [
-            [ItemUIUX1, 'staarlabs', 'E-Commerce website', ''],
-            [ItemUIUX2, 'Ươm app', 'Ứng dụng hộ trợ chăm sóc cây trồng', ''],
-            [ItemUIUX3, 'Bandy Constructor', 'Business Website', ''],
-            [ItemUIUX4, 'Pomodoro app', 'Ứng dụng quản lý thời gian', ''],
-            [ItemUIUX5, 'luật thắng lợi', 'Business Website', ''],
-            [ItemUIUX6, 'Dragonship App', 'Ứng dụng vận chuyển cho doanh nghiệp', ''],
-            [ItemUIUX7, 'Affiliate Tool', 'Công cụ quản lý đơn hàng Affiliate', ''],
-            [ItemUIUX8, 'all landing pages', 'Business Website', ''],
-            [ItemUIUX9, 'Meditation App', 'Ứng dụng chữa lành tâm hồn', '']
+            [ItemUIUX1, 'staarlabs', 'E-Commerce website', 'https://www.behance.net/gallery/192181793/Staar-Labs-_-Ecommerce-website'],
+            [ItemUIUX2, 'Ươm app', 'Ứng dụng hộ trợ chăm sóc cây trồng', 'https://www.behance.net/gallery/168387749/UOM-ng-dng-h-tr-cham-soc-cay-trng'],
+            [ItemUIUX3, 'Bandy Constructor', 'Business Website', 'https://www.behance.net/gallery/190111391/Bandy-Constructors'],
+            [ItemUIUX4, 'Pomodoro app', 'Ứng dụng quản lý thời gian', 'https://www.behance.net/gallery/190111567/Pomodoro-app'],
+            [ItemUIUX5, 'luật thắng lợi', 'Business Website', 'https://www.behance.net/gallery/190111649/lut-thng-li'],
+            [ItemUIUX6, 'Dragonship App', 'Ứng dụng vận chuyển cho doanh nghiệp', 'https://www.behance.net/gallery/190111769/Dragonship-App'],
+            [ItemUIUX7, 'Affiliate Tool', 'Công cụ quản lý đơn hàng Affiliate', 'https://www.behance.net/gallery/190111915/Affiliate-Tool'],
+            [ItemUIUX8, 'all landing pages', 'Business Website', 'https://www.behance.net/gallery/190111975/Landing-pages-_-Case-study-Seo-Brand'],
+            [ItemUIUX9, 'Meditation App', 'Ứng dụng chữa lành tâm hồn', 'https://www.behance.net/gallery/190112241/Meditation-App']
         ], [
-            [ItemBranding1, 'INHERE', 'branding identity', ''],
-            [ItemBranding2, 'aPao', 'branding identity', ''],
-            [ItemBranding3, 'Vchosi', 'branding identity', ''],
-            [ItemBranding4, 'Mơ Bistro', 'branding identity', ''],
-            [ItemBranding5, '20Q Reminder', 'branding identity', ''],
-            [ItemBranding6, 'Nghĩa Ân - Bò Khô', 'branding identity', ''],
-            [ItemBranding7, 'Clara - Vải lụa tơ sen', 'branding identity', ''],
-            [ItemBranding8, 'Sblazer', 'branding identity', '']
+            [ItemBranding1, 'INHERE', 'branding identity', 'https://www.behance.net/gallery/152502821/INHERE'],
+            [ItemBranding2, 'aPao', 'branding identity', 'https://www.behance.net/gallery/161925681/aPao'],
+            [ItemBranding3, 'Vchosi', 'branding identity', 'https://www.behance.net/gallery/190112341/Vchosi'],
+            [ItemBranding4, 'Mơ Bistro', 'branding identity', 'https://www.behance.net/gallery/190112441/Mo-Bistro'],
+            [ItemBranding5, '20Q Reminder', 'branding identity', 'https://www.behance.net/gallery/190112561/20Q-Reminder'],
+            [ItemBranding6, 'Nghĩa Ân - Bò Khô', 'branding identity', 'https://www.behance.net/gallery/190112611/Ngha-An-Bo-Kho'],
+            [ItemBranding7, 'Clara - Vải lụa tơ sen', 'branding identity', 'https://www.behance.net/gallery/146205075/Clara'],
+            [ItemBranding8, 'Sblazer', 'branding identity', 'https://www.behance.net/gallery/157261901/sblazer']
         ], [
             [ItemSocialPost1, 'Coffee Day', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
             [ItemSocialPost2, 'Chuyện ngày xuân', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
@@ -65,10 +65,10 @@ function Carousel(props) {
             [ItemSocialPost8, 'Combo Saffron', 'Social image', 'https://www.behance.net/VanLoc-Designer'],
             [ItemSocialPost9, 'Vnfs', 'Social image', 'https://www.behance.net/VanLoc-Designer']
         ], [
-            [ItemPhotography1, 'tạp chí môi trường', 'Photography', ''],
-            [ItemPhotography2, 'tạp chí môi trường', 'Photography', ''],
-            [ItemPhotography3, 'Trà hoa việt - Hương sen', 'Photography', ''],
-            [ItemPhotography4, 'INHERE - SAFFRON', 'Photography', '']
+            [ItemPhotography1, 'tạp chí môi trường', 'Photography', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemPhotography2, 'tạp chí môi trường', 'Photography', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemPhotography3, 'Trà hoa việt - Hương sen', 'Photography', 'https://www.behance.net/VanLoc-Designer'],
+            [ItemPhotography4, 'INHERE - SAFFRON', 'Photography', 'https://www.behance.net/VanLoc-Designer']
         ]
     ];
 
@@ -76,7 +76,7 @@ function Carousel(props) {
         <>
             {itemCarousel[props.item].map((x, index) => (
                 <div key={index} className='group flex flex-col gap-6 flex-[0_0_90%] snap-center snap-always lg:flex-[0_0_20%]'>
-                    <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} onClick={() => window.open(x[3], '_blank')}/>
+                    <img className='w-full transition-all duration-500 group-hover:rounded-[32px]' src={x[0]} onClick={() => {props.clicked && window.open(x[3], '_blank')}}/>
                     <div className='relative h-32 lg:h-[155px]'>
                         <div className='absolute flex flex-col gap-3'>
                             <div className='flex flex-col text-white/80'>

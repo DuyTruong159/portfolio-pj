@@ -4,12 +4,14 @@ import React, { useState } from 'react';
 
 function SectionItems(props) {
 
+    const [click, setClick] = useState(true);
     const [mouseDown, setMouseDown] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const sliderRef = React.useRef(null);
 
     const startDragging = (e) => {
+        e.preventDefault();
         setMouseDown(true);
         setStartX(e.pageX - sliderRef.current.offsetLeft);
         setScrollLeft(sliderRef.current.scrollLeft);
@@ -22,9 +24,11 @@ function SectionItems(props) {
     const move = (e) => {
         e.preventDefault();
         if (!mouseDown) return;
+        setClick(false);
         const x = e.pageX - sliderRef.current.offsetLeft;
         const scroll = x - startX;
         sliderRef.current.scrollLeft = scrollLeft - scroll;
+        setTimeout(() => {setClick(true)}, 1000)
     };
 
     return(
@@ -47,7 +51,7 @@ function SectionItems(props) {
             {props.item != 4 ? (
                 <div className='flex gap-5 overflow-x-scroll overflow-y-hidden lg:gap-16 cursor-pointer' id="scroll"
                     ref={sliderRef} onMouseMove={move} onMouseDown={startDragging} onMouseUp={stopDragging} onMouseLeave={stopDragging}>
-                    <Carousel item={props.item}/>
+                    <Carousel clicked={click} item={props.item}/>
                 </div>
             ) : (
                 <div className="relative h-4/5 m-auto border-4 border-solid border-white lg:w-3/5 cursor-pointer" onClick={() => window.open('https://www.behance.net/VanLoc-Designer', '_blank')}>
